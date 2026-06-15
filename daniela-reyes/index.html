@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniela Reyes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,600;0,9..144,900;1,9..144,600&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15233F; --gold:#E0A02A; --cream:#F4EEE0; --cream2:#EDE4D1;
+    --body:'Archivo',system-ui,sans-serif; --disp:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);line-height:1.55}
+  .wrap{max-width:56rem;margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem}
+  a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+  /* Gold hero band */
+  .hero{background:linear-gradient(160deg, #ecae3d 0%, var(--gold) 60%);color:var(--ink);padding:4rem 0 3.5rem;position:relative;overflow:hidden}
+  .hero::after{content:"%";position:absolute;right:-2rem;bottom:-7rem;font-family:var(--disp);font-weight:900;
+    font-size:24rem;color:var(--ink);opacity:.06;line-height:1;pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:center;position:relative}
+  h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.6rem,7vw,4.2rem);line-height:.98;letter-spacing:-.015em;margin:.5rem 0 1rem}
+  .lede{font-size:clamp(1rem,2.2vw,1.15rem);line-height:1.5;max-width:28rem;font-weight:500}
+  .cta{display:inline-block;margin-top:1.4rem;background:var(--ink);color:var(--cream);font-weight:700;
+       text-decoration:none;padding:.8rem 1.5rem;border-radius:3px;font-size:.95rem}
+  .cta:hover{filter:brightness(1.15)}
+
+  .slot{width:min(13.5rem,65vw);aspect-ratio:4/5;position:relative;border-radius:4px;overflow:hidden;
+        background:var(--ink);transform:rotate(-2deg);box-shadow:0 10px 24px rgba(21,35,63,.25)}
+  .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--gold)}
+  .mono .ring{width:6rem;height:6rem;border:3px solid var(--gold);border-radius:50%;
+        display:flex;align-items:center;justify-content:center;
+        font-family:var(--disp);font-weight:900;font-size:2.2rem;letter-spacing:.02em}
+  .mono .hint{font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(244,238,224,.65)}
+
+  section{padding:3rem 0}
+  h2{font-family:var(--disp);font-weight:600;font-size:1.6rem;margin:.4rem 0 1rem}
+  .known{display:flex;flex-wrap:wrap;gap:.6rem}
+  .chip{border:1.5px solid var(--ink);border-radius:999px;padding:.4rem 1rem;font-weight:500;font-size:.9rem}
+  .chip.gold{background:var(--gold);border-color:var(--gold)}
+
+  /* The menu: her record set like the family restaurant's specials board */
+  .menu{background:var(--ink);color:var(--cream)}
+  .menu .eyebrow{color:var(--gold)}
+  .menu h2{color:var(--cream)}
+  .menu h2 em{font-style:italic;color:var(--gold)}
+  .board{max-width:34rem;margin-top:1.2rem}
+  .item{margin-bottom:1.15rem}
+  .item .row{display:flex;align-items:baseline;gap:.6rem}
+  .item .name{font-family:var(--disp);font-weight:600;font-size:1.05rem;white-space:nowrap}
+  .item .dots{flex:1;border-bottom:2px dotted rgba(244,238,224,.4);transform:translateY(-.25rem)}
+  .item .price{font-family:var(--disp);font-weight:900;color:var(--gold);white-space:nowrap}
+  .item p{font-size:.88rem;color:rgba(244,238,224,.78);margin-top:.2rem;max-width:28rem}
+
+  .headed p{font-family:var(--disp);font-weight:340;font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.4;max-width:36rem}
+  .headed b{font-weight:600;border-bottom:3px solid var(--gold)}
+
+  footer{border-top:1px solid rgba(21,35,63,.18);padding:1.1rem 0 1.4rem}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .mark{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em}
+  .mark .dot{width:.6rem;height:.6rem;background:var(--gold);border-radius:2px}
+  .motto{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;opacity:.65}
+
+  @media (max-width:43rem){
+    .hero .wrap{grid-template-columns:1fr}
+    .slot{order:-1}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="slot">
+      <div class="mono"><div class="ring">DR</div><div class="hint">Photo coming soon</div></div>
+      <img src="photo.jpg" alt="Daniela Reyes" onerror="this.remove()">
+    </div>
+    <div>
+      <p class="eyebrow">Hi, I'm</p>
+      <h1>Daniela Reyes</h1>
+      <p class="lede">Seventeen. I keep the books at my family's restaurant, which means I learned profit margins before I learned to drive. Numbers make sense to me. I want to find out how far that goes.</p>
+      <a class="cta" href="mailto:hello@example.com">Say hello</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Known for</p>
+    <h2>The one with the calculator.</h2>
+    <div class="known">
+      <span class="chip gold">Numbers</span>
+      <span class="chip">DECA</span>
+      <span class="chip">The restaurant</span>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="wrap">
+    <p class="eyebrow">Today's specials</p>
+    <h2>What I've actually done, <em>served fresh.</em></h2>
+    <div class="board">
+      <div class="item"><div class="row"><span class="name">The bookkeeping</span><span class="dots"></span><span class="price">3 yrs</span></div><p>Three years running the restaurant's books, payroll to food costs.</p></div>
+      <div class="item"><div class="row"><span class="name">DECA, state qualifier</span><span class="dots"></span><span class="price">States</span></div><p>Qualified for the New York state competition in entrepreneurship.</p></div>
+      <div class="item"><div class="row"><span class="name">The Tuesday fix</span><span class="dots"></span><span class="price">+18%</span></div><p>Moved our slowest night to a fixed-price family menu. Tuesdays stopped losing money.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="headed">
+  <div class="wrap">
+    <p class="eyebrow">Where I'm headed</p>
+    <p>I want to study <b>business</b>, the real kind, with the spreadsheets and the hard calls. I've seen what one good decision does for a small restaurant. I want to learn what it does for something bigger.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark"><span class="dot"></span>NYIT School of Management</div>
+    <div class="motto">Think first, build fast</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suresh Iyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,600;9..144,900&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15233F; --gold:#E0A02A; --cream:#F4EEE0; --cream2:#EDE4D1;
+    --body:'Archivo',system-ui,sans-serif; --disp:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);line-height:1.55}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  /* Hero */
+  .hero{background:radial-gradient(120% 90% at 15% -10%, #1c2d4f 0%, var(--ink) 55%);color:var(--cream);padding:4.5rem 0 4rem}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center}
+  .hero .eyebrow{color:var(--gold)}
+  h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.6rem,7vw,4.4rem);line-height:.98;letter-spacing:-.015em;margin:.5rem 0 1rem}
+  .lede{font-family:var(--disp);font-weight:340;font-size:clamp(1.05rem,2.4vw,1.3rem);line-height:1.4;max-width:26rem}
+  .cta{display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--ink);font-weight:700;
+       text-decoration:none;padding:.8rem 1.5rem;border-radius:3px;font-size:.95rem}
+  .cta:hover{filter:brightness(1.07)}
+
+  /* Photo slot: shows photo.jpg if present, monogram otherwise */
+  .slot{justify-self:end;width:min(15rem,70vw);aspect-ratio:4/5;position:relative;border-radius:4px;overflow:hidden;
+        background:var(--ink);border:1px solid rgba(244,238,224,.3)}
+  .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
+  .mono .ring{width:6.5rem;height:6.5rem;border:3px solid var(--gold);border-radius:50%;
+        display:flex;align-items:center;justify-content:center;
+        font-family:var(--disp);font-weight:900;font-size:2.4rem;color:var(--gold);letter-spacing:.02em}
+  .mono .hint{font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(244,238,224,.6)}
+
+  /* Sections */
+  section{padding:3.25rem 0}
+  h2{font-family:var(--disp);font-weight:600;font-size:1.6rem;margin:.4rem 0 1.1rem}
+  .rule{height:2px;background:var(--ink);opacity:.85;width:3rem;margin-bottom:1rem}
+  .known{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+  .chip{border:1.5px solid var(--ink);border-radius:999px;padding:.4rem 1rem;font-weight:500;font-size:.9rem}
+  .chip.gold{background:var(--gold);border-color:var(--gold)}
+
+  .done{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .done article{background:var(--cream2);border-radius:4px;padding:1.4rem 1.3rem}
+  .done .n{font-family:var(--disp);font-weight:900;font-size:1.5rem;color:var(--gold)}
+  .done h3{font-size:1rem;margin:.45rem 0 .35rem}
+  .done p{font-size:.92rem;color:#33405c}
+
+  .headed{background:var(--ink);color:var(--cream)}
+  .headed .eyebrow{color:var(--gold)}
+  .headed p{font-family:var(--disp);font-weight:340;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.4;max-width:38rem}
+  .headed b{color:var(--gold);font-weight:600}
+
+  /* Footer with the NYIT mark */
+  footer{background:var(--cream);border-top:1px solid rgba(21,35,63,.18);padding:1.1rem 0 1.4rem}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .mark{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em}
+  .mark .dot{width:.6rem;height:.6rem;background:var(--gold);border-radius:2px}
+  .motto{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;opacity:.65}
+
+  @media (max-width:43rem){
+    .hero .wrap{grid-template-columns:1fr}
+    .slot{justify-self:start}
+    .done{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Portfolio</p>
+      <h1>Suresh Iyer</h1>
+      <p class="lede">Seventeen, from Hicksville. Builds robots on his school's FIRST team, tutors algebra, and is headed for business and engineering.</p>
+      <a class="cta" href="mailto:hello@example.com">Get in touch</a>
+    </div>
+    <div class="slot">
+      <div class="mono"><div class="ring">SI</div><div class="hint">Photo coming soon</div></div>
+      <img src="photo.jpg" alt="Suresh Iyer" onerror="this.remove()">
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow">Known for</p>
+    <h2>Making machines behave.</h2>
+    <div class="known">
+      <span class="chip gold">Robotics</span>
+      <span class="chip">Math tutoring</span>
+      <span class="chip">Cricket</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow">Things I've actually done</p>
+    <h2>Proof, not promises.</h2>
+    <div class="done">
+      <article><div class="n">01</div><h3>Drive-train lead, FIRST Robotics</h3><p>Designed and built the drive train that took our team to the regional quarterfinals.</p></article>
+      <article><div class="n">02</div><h3>Algebra tutor, 40 sessions</h3><p>Tutored ninth graders weekly for two school years. Every one of them passed.</p></article>
+      <article><div class="n">03</div><h3>Club treasurer</h3><p>Ran the robotics club budget: raised $2,100 in parts sponsorships from local shops.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="headed">
+  <div class="wrap">
+    <p class="eyebrow">Where I'm headed</p>
+    <p>I want to study <b>business and engineering</b> together, because the machines are the easy part. Getting people to fund them, use them, and trust them is the hard part worth learning.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark"><span class="dot"></span>NYIT School of Management</div>
+    <div class="motto">Think first, build fast</div>
+  </div>
+</footer>
+
+</body>
+</html>
