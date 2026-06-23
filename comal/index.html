@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comal — the seven-year story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,600;0,9..144,900;1,9..144,600&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15233F; --gold:#E0A02A; --cream:#F4EEE0; --cream2:#EDE4D1; --deep:#0e1830;
+    --body:'Archivo',system-ui,sans-serif; --disp:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);line-height:1.55}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem}
+  a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  img{display:block}
+
+  /* Hero */
+  .hero{background:radial-gradient(120% 90% at 12% -10%, #1c2d4f 0%, var(--ink) 55%);color:var(--cream);padding:4.5rem 0 3.75rem}
+  .hero .eyebrow{color:var(--gold)}
+  .brand{font-family:var(--disp);font-weight:900;font-size:clamp(3.4rem,11vw,6.5rem);line-height:.9;letter-spacing:-.02em;margin:.5rem 0 .4rem}
+  .tag{font-family:var(--disp);font-weight:340;font-style:italic;font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--cream);opacity:.92}
+  .what{max-width:34rem;margin-top:1.4rem;font-size:1.02rem;color:rgba(244,238,224,.85)}
+  .founders{display:flex;align-items:center;gap:.9rem;margin-top:2rem}
+  .founders .faces{display:flex}
+  .founders .faces span{width:3.1rem;height:3.1rem;border-radius:50%;overflow:hidden;border:2px solid var(--gold);background:var(--deep);margin-left:-.7rem}
+  .founders .faces span:first-child{margin-left:0}
+  .founders .faces img{width:100%;height:100%;object-fit:cover}
+  .founders .by{font-size:.82rem;line-height:1.35}
+  .founders .by b{color:var(--gold);font-weight:700}
+  .founders .by span{display:block;color:rgba(244,238,224,.6);text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;margin-top:.15rem}
+
+  /* Intro strip */
+  .intro{background:var(--cream2);padding:2.6rem 0}
+  .intro p{font-family:var(--disp);font-weight:340;font-size:clamp(1.2rem,2.8vw,1.6rem);line-height:1.42;max-width:42rem}
+  .intro b{font-weight:600;border-bottom:3px solid var(--gold)}
+
+  /* Chapters */
+  .ch{padding:3.4rem 0;border-top:1px solid rgba(21,35,63,.12)}
+  .ch .grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+  .ch .yr{font-family:var(--disp);font-weight:900;color:var(--gold);font-size:.95rem;letter-spacing:.18em}
+  .ch h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.05;margin:.35rem 0 .9rem}
+  .ch p{font-size:1rem;max-width:30rem}
+  .ch p+p{margin-top:.8rem}
+  .stage{font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:#6b7689;margin-top:1.1rem;font-weight:700}
+
+  /* Scene image slot (where the AI likeness art goes) */
+  .scene{aspect-ratio:4/3;border-radius:5px;overflow:hidden;position:relative;background:var(--deep);
+         border:1px solid rgba(21,35,63,.2);box-shadow:0 14px 30px rgba(21,35,63,.18)}
+  .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .scene .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.1rem;color:var(--cream)}
+  .scene .ph .num{font-family:var(--disp);font-weight:900;font-size:2.6rem;color:var(--gold);line-height:1}
+  .scene .ph .lab{font-family:var(--disp);font-weight:600;font-size:1.15rem;max-width:14rem}
+  .scene .cap{font-size:.58rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(244,238,224,.55)}
+
+  /* The hard-call callout */
+  .call{margin-top:1.3rem;border-left:3px solid var(--gold);padding:.2rem 0 .2rem 1.1rem}
+  .call .k{font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;font-weight:700;color:var(--gold)}
+  .call p{font-family:var(--disp);font-weight:340;font-style:italic;font-size:1.08rem;margin-top:.3rem;max-width:30rem;color:var(--ink)}
+
+  /* Dark chapters for rhythm */
+  .ch.dark{background:var(--ink);color:var(--cream);border-top-color:rgba(244,238,224,.12)}
+  .ch.dark h2{color:var(--cream)}
+  .ch.dark .stage{color:rgba(244,238,224,.55)}
+  .ch.dark .call p{color:var(--cream)}
+  .ch.dark .scene{border-color:rgba(244,238,224,.2)}
+
+  /* The bridge back to the personal futures */
+  .bridge{background:var(--deep);color:var(--cream);padding:4rem 0}
+  .bridge .eyebrow{color:var(--gold)}
+  .bridge h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.04;margin:.4rem 0 .7rem;color:var(--cream)}
+  .bridge .sub{max-width:38rem;color:rgba(244,238,224,.82)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.2rem}
+  .who{background:rgba(244,238,224,.05);border:1px solid rgba(244,238,224,.16);border-radius:6px;padding:1.3rem;display:flex;gap:1rem;align-items:flex-start}
+  .who .pic{width:5.5rem;height:6.9rem;flex:none;border-radius:4px;overflow:hidden;background:#1c2d4f;border:1px solid rgba(244,238,224,.25)}
+  .who .pic img{width:100%;height:100%;object-fit:cover}
+  .who h3{font-family:var(--disp);font-weight:600;font-size:1.15rem;color:var(--cream)}
+  .who .yr{font-family:var(--disp);font-weight:900;color:var(--gold);font-size:.8rem;letter-spacing:.14em}
+  .who p{font-size:.9rem;color:rgba(244,238,224,.82);margin-top:.4rem}
+
+  /* Lifecycle ledger: makes the teaching explicit */
+  .ledger{background:var(--cream2);padding:2.8rem 0}
+  .ledger .eyebrow{color:#6b7689}
+  .ledger h2{font-family:var(--disp);font-weight:600;font-size:1.5rem;margin:.3rem 0 1.2rem}
+  .stations{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .station{background:var(--cream);border-radius:5px;padding:1rem;border:1px solid rgba(21,35,63,.1)}
+  .station .n{font-family:var(--disp);font-weight:900;color:var(--gold);font-size:1.2rem}
+  .station h4{font-size:.85rem;margin:.3rem 0 .25rem}
+  .station p{font-size:.74rem;color:#5a6478}
+
+  footer{background:var(--cream);border-top:1px solid rgba(21,35,63,.18);padding:1.4rem 0 1.6rem}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .mark{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em}
+  .mark .dot{width:.6rem;height:.6rem;background:var(--gold);border-radius:2px}
+  .motto{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;opacity:.65}
+  .synthetic{text-align:center;font-size:.62rem;color:#8a93a3;padding:.9rem 0 0;letter-spacing:.04em}
+
+  @media (max-width:46rem){
+    .ch .grid{grid-template-columns:1fr;gap:1.4rem}
+    .ch .scene{order:-1}
+    .two,.stations{grid-template-columns:1fr}
+    .stations{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">NYIT School of Management · Idea to Enterprise</p>
+    <div class="brand">Comal</div>
+    <p class="tag">Every kitchen, in its place.</p>
+    <p class="what">The software, and later the small machine, that kept independent family restaurants alive when the chains had every other advantage. This is its story, written forward from the day it did not yet exist.</p>
+    <div class="founders">
+      <div class="faces">
+        <span><img src="../daniela-reyes/photo.jpg" alt="Daniela Reyes" onerror="this.parentElement.remove()"></span>
+        <span><img src="../suresh-iyer/photo.jpg" alt="Suresh Iyer" onerror="this.parentElement.remove()"></span>
+      </div>
+      <div class="by">
+        <b>Daniela Reyes &amp; Suresh Iyer</b>
+        <span>Co-founders · met at NYIT, 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="intro">
+  <div class="wrap">
+    <p>A company is not a list of steps. It is a string of decisions made with too little information and too much at stake. <b>Here are the seven that built Comal.</b></p>
+  </div>
+</div>
+
+<!-- Y0 -->
+<section class="ch">
+  <div class="wrap"><div class="grid">
+    <div>
+      <div class="yr">2026 · YEAR ZERO</div>
+      <h2>The napkin.</h2>
+      <p>Daniela kept the books at her family's restaurant, so she knew the number that scared her: a third of every delivery went in the trash before anyone ordered it. One slow week the waste nearly cost the staff a paycheck.</p>
+      <p>At NYIT she met Suresh, who built demand models for the fun of it. They sketched it on a napkin. Software that tells a small kitchen what to buy and what to prep, so it stops bleeding cash it never had.</p>
+      <div class="call">
+        <div class="k">The call</div>
+        <p>Whose problem, exactly? Not "restaurants." The independent owner with no buyer, no analyst, and no margin for a bad guess.</p>
+      </div>
+      <div class="stage">Stage · Problem and customer</div>
+    </div>
+    <div class="scene"><div class="ph"><div class="num">01</div><div><div class="lab">Two founders, one napkin, a back booth at the family restaurant</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/01-napkin.png" alt="Two founders sketching on a napkin in a restaurant booth, 2026" onerror="this.remove()"></div>
+  </div></div>
+</section>
+
+<!-- Y1 -->
+<section class="ch dark">
+  <div class="wrap"><div class="grid">
+    <div class="scene"><div class="ph"><div class="num">02</div><div><div class="lab">The first dashboard, lit up on the kitchen wall during a Friday rush</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/02-dashboard.png" alt="A demand dashboard glowing on a kitchen wall during service, 2027" onerror="this.remove()"></div>
+    <div>
+      <div class="yr">2027 · YEAR ONE</div>
+      <h2>Customer number one.</h2>
+      <p>Their first customer was the restaurant that started it. Comal told the kitchen what the weekend would need, and the waste line fell by half. The place survived its worst winter in a decade.</p>
+      <p>They charged two hundred dollars a month and signed three more restaurants on Long Island. It was real revenue, small and terrifying and theirs.</p>
+      <div class="call">
+        <div class="k">The call</div>
+        <p>Charge from day one, or grow free and hope to charge later? They charged. A thing nobody pays for is a hobby, not a company.</p>
+      </div>
+      <div class="stage">Stage · First product, first dollar</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- Y2 -->
+<section class="ch">
+  <div class="wrap"><div class="grid">
+    <div>
+      <div class="yr">2028 · YEAR TWO</div>
+      <h2>Two more hands.</h2>
+      <p>Twelve restaurants. More than two college students could answer the phone for. They hired their first two employees and learned that a founder's hardest spreadsheet is the one with people's names on it.</p>
+      <p>They gave Comal a face: the logo, the voice, the promise to the owner who could not afford to be sold a gimmick.</p>
+      <div class="stage">Stage · Team and brand</div>
+    </div>
+    <div class="scene"><div class="ph"><div class="num">03</div><div><div class="lab">Four people now, crowded around a whiteboard of restaurant names</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/03-whiteboard.png" alt="A four-person team at a whiteboard of company names, 2028" onerror="this.remove()"></div>
+  </div></div>
+</section>
+
+<!-- Y3 the near-death -->
+<section class="ch dark">
+  <div class="wrap"><div class="grid">
+    <div class="scene"><div class="ph"><div class="num">04</div><div><div class="lab">A dark office at 2 a.m., a churn chart going the wrong way</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/04-latenight.png" alt="Two founders in a dark office late at night facing a falling chart, 2029" onerror="this.remove()"></div>
+    <div>
+      <div class="yr">2029 · YEAR THREE</div>
+      <h2>The year it almost ended.</h2>
+      <p>A venture-backed company bundled a free forecasting tool into the biggest restaurant point-of-sale system in the country. Overnight, Comal's one feature was free everywhere. Customers left. The savings ran out. One founder wanted to sell for parts. The other wanted to fight.</p>
+      <p>Daniela went back to the kitchens and asked what actually kept owners up at night. It was not forecasting. It was that they could not find or afford a prep cook. So Comal bet everything it had left on a small countertop machine that did the prep, the one thing a free download could never copy.</p>
+      <div class="call">
+        <div class="k">The call</div>
+        <p>Sell cheap and walk away whole, or spend the last of the runway on a machine they had never built? They built the machine.</p>
+      </div>
+      <div class="stage">Stage · Competition, near-death, the pivot</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- Y4 the bet pays -->
+<section class="ch">
+  <div class="wrap"><div class="grid">
+    <div>
+      <div class="yr">2030 · YEAR FOUR</div>
+      <h2>The bet pays.</h2>
+      <p>A diner an hour from closing stayed open because one machine did the work of the prep cook it could never hire. Then another. The pivot was not a slogan; it was a kitchen that kept its lights on.</p>
+      <p>For the first time, investors who had passed called back. Comal raised a real round, not to look successful, but to build machines faster than the orders were coming in.</p>
+      <div class="call">
+        <div class="k">The call</div>
+        <p>Take the money and answer to it, or stay small and stay pure? They took it, on the condition the mission came in writing.</p>
+      </div>
+      <div class="stage">Stage · Traction and capital</div>
+    </div>
+    <div class="scene"><div class="ph"><div class="num">05</div><div><div class="lab">The first Comal machine on a real kitchen line, an owner watching it work</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/05-machine.png" alt="The first Comal countertop machine on a working kitchen line, 2030" onerror="this.remove()"></div>
+  </div></div>
+</section>
+
+<!-- Y5 scale -->
+<section class="ch dark">
+  <div class="wrap"><div class="grid">
+    <div class="scene"><div class="ph"><div class="num">06</div><div><div class="lab">A wall map of the Northeast, hundreds of pins, a press clipping framed</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/06-map.png" alt="A wall map of the Northeast covered in location pins, 2031" onerror="this.remove()"></div>
+    <div>
+      <div class="yr">2031 · YEAR FIVE</div>
+      <h2>The underdog's company.</h2>
+      <p>Hundreds of independent kitchens across the Northeast ran on Comal. The trade press called it the company keeping family restaurants alive against the chains. Daniela's own family restaurant was still customer number one, and still got a call on her cell when something broke.</p>
+      <div class="stage">Stage · Growth and market position</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- Y6 the offer -->
+<section class="ch">
+  <div class="wrap"><div class="grid">
+    <div>
+      <div class="yr">2032 · YEAR SIX</div>
+      <h2>The offer.</h2>
+      <p>The acquirer was a national food-tech giant, one of the same kind that had once tried to bury them with a free tool. They wanted Comal. The number was life-changing. The fear was simple: would the new owner keep serving the small kitchens, or quietly walk Comal upmarket toward the chains that could pay more?</p>
+      <div class="call">
+        <div class="k">The call</div>
+        <p>What is a company for? If Comal existed to save the independents, then the terms of the sale mattered more than the size of it.</p>
+      </div>
+      <div class="stage">Stage · The strategic decision</div>
+    </div>
+    <div class="scene"><div class="ph"><div class="num">07</div><div><div class="lab">A boardroom, a term sheet on the table, two young founders across from suits</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/07-boardroom.png" alt="Two young founders across a boardroom table from acquirers, 2032" onerror="this.remove()"></div>
+  </div></div>
+</section>
+
+<!-- Y7 the exit -->
+<section class="ch dark">
+  <div class="wrap"><div class="grid">
+    <div class="scene"><div class="ph"><div class="num">08</div><div><div class="lab">Daniela and Suresh, 24, on the front step of the family restaurant, the deal signed</div><div class="cap">Scene image, generated for illustration</div></div></div><img loading="lazy" src="scenes/08-frontstep.png" alt="The two founders on the family restaurant's front step after the sale, 2033" onerror="this.remove()"></div>
+    <div>
+      <div class="yr">2033 · YEAR SEVEN</div>
+      <h2>They sold it right.</h2>
+      <p>They sold, on one condition written into the deal: Comal would keep serving independent kitchens, by name, for years to come. They were twenty-four. They walked away having protected the thing they built, not just cashed it.</p>
+      <p>And the money was never the point. It was the runway for the futures they had each written on their first day at NYIT, seven years earlier.</p>
+      <div class="stage">Stage · The exit and what it was all for</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- Bridge to the personal futures -->
+<section class="bridge">
+  <div class="wrap">
+    <p class="eyebrow">What the exit bought</p>
+    <h2>The same two futures they wrote on day one.</h2>
+    <p class="sub">In the morning they each built a personal site and imagined themselves ten years on. Comal is how those two pictures come true. The company was the launchpad, not the destination.</p>
+    <div class="two">
+      <div class="who">
+        <div class="pic"><img src="../daniela-reyes/daniela-2036.jpg" alt="Daniela in 2036" onerror="this.parentElement.remove()"></div>
+        <div>
+          <h3>Daniela Reyes</h3>
+          <div class="yr">2036</div>
+          <p>Uses her share to open her own restaurant, the first of three, one of them holding three Michelin stars. She still runs the numbers herself.</p>
+        </div>
+      </div>
+      <div class="who">
+        <div class="pic"><img src="../suresh-iyer/suresh-2036.jpg" alt="Suresh in 2036" onerror="this.parentElement.remove()"></div>
+        <div>
+          <h3>Suresh Iyer</h3>
+          <div class="yr">2036</div>
+          <p>Pours his into the hardest engineering he can find, and ten years on is a lead engineer on a Mars base. The machines were always the point for him.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lifecycle ledger: the teaching, made explicit -->
+<section class="ledger">
+  <div class="wrap">
+    <p class="eyebrow">What you just walked through</p>
+    <h2>The life of a company, in eight stations.</h2>
+    <div class="stations">
+      <div class="station"><div class="n">1</div><h4>Problem &amp; customer</h4><p>Whose pain, exactly, and why now.</p></div>
+      <div class="station"><div class="n">2</div><h4>First dollar</h4><p>The product, and someone who pays.</p></div>
+      <div class="station"><div class="n">3</div><h4>Team &amp; brand</h4><p>People and a promise.</p></div>
+      <div class="station"><div class="n">4</div><h4>Near-death &amp; pivot</h4><p>The threat that forces the truth.</p></div>
+      <div class="station"><div class="n">5</div><h4>Traction &amp; capital</h4><p>Proof, then fuel.</p></div>
+      <div class="station"><div class="n">6</div><h4>Scale</h4><p>From a few kitchens to a market.</p></div>
+      <div class="station"><div class="n">7</div><h4>The strategic call</h4><p>What the company is actually for.</p></div>
+      <div class="station"><div class="n">8</div><h4>The exit</h4><p>Selling it, and selling it right.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark"><span class="dot"></span>NYIT School of Management</div>
+    <div class="motto">Think first, build fast</div>
+  </div>
+  <div class="synthetic">Comal is a sample company, invented for this workshop. Founders, milestones, and images are imagined for illustration.</div>
+</footer>
+
+</body>
+</html>
