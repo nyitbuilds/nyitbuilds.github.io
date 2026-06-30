@@ -58,6 +58,11 @@
   .headed p{font-family:var(--disp);font-weight:340;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.4;max-width:38rem}
   .headed b{color:var(--gold);font-weight:600}
 
+  /* The arc: the line between present proof and projected future */
+  .bridge{background:var(--cream2);text-align:center;padding:2.6rem 0}
+  .bridge .eyebrow{color:var(--gold);display:block;margin-bottom:.55rem}
+  .bridge .bridgeline{font-family:var(--disp);font-weight:340;font-style:italic;font-size:clamp(1.1rem,2.6vw,1.4rem);line-height:1.4;max-width:34rem;margin:0 auto;color:var(--ink)}
+
   /* Footer with the NYIT mark */
   footer{background:var(--cream);border-top:1px solid rgba(21,35,63,.18);padding:1.1rem 0 1.4rem}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
@@ -72,14 +77,14 @@
   }
 
   /* Ten-years-on section */
-  .future{background:#0e1830;color:var(--cream);position:relative;overflow:hidden}
+  .future{background:#0e1830;color:var(--cream);position:relative;overflow:hidden;padding:4.5rem 0 5.25rem}
   .future .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:2.5rem;align-items:center;position:relative}
   .future .eyebrow{color:var(--gold)}
   .future .yr{display:inline-block;font-family:var(--disp);font-weight:900;color:var(--gold);font-size:.95rem;letter-spacing:.14em;margin-top:.35rem}
-  .future h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.03;color:var(--cream);margin:.2rem 0 1rem}
+  .future h2{font-family:var(--disp);font-weight:900;font-size:clamp(2.2rem,5.6vw,3.5rem);line-height:1.0;color:var(--cream);margin:.2rem 0 1rem}
   .future p.n{font-size:1.02rem;color:rgba(244,238,224,.84);max-width:30rem}
   .future .cap{font-size:.6rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(244,238,224,.5);margin-top:.95rem}
-  .fslot{justify-self:end;width:min(15rem,72vw);aspect-ratio:4/5;position:relative;border-radius:4px;overflow:hidden;background:#1c2d4f;border:1px solid rgba(244,238,224,.25)}
+  .fslot{justify-self:end;width:min(18rem,80vw);aspect-ratio:4/5;position:relative;border-radius:4px;overflow:hidden;background:#1c2d4f;border:1px solid rgba(244,238,224,.25);box-shadow:0 16px 40px rgba(0,0,0,.35)}
   .fslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .fmono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--disp);font-weight:900;font-size:1.3rem;letter-spacing:.05em;text-align:center;padding:1rem;line-height:1.3}
   .avatar{position:absolute;inset:0;width:100%;height:100%}
@@ -93,7 +98,7 @@
     <div>
       <p class="eyebrow">Portfolio</p>
       <h1>Suresh Iyer</h1>
-      <p class="lede">Seventeen, from Hicksville. Builds robots on his school's FIRST team, tutors algebra, and is headed for business and engineering.</p>
+      <p class="lede">I build machines that work and get them funded, the engineering and the budget both. If you are backing the next engineer, back the one who can do both.</p>
       <a class="cta" href="mailto:hello@example.com">Get in touch</a>
     </div>
     <div class="slot">
@@ -136,6 +141,12 @@
   </div>
 </section>
 
+<section class="bridge">
+  <div class="wrap">
+    <span class="eyebrow">The line between</span>
+    <p class="bridgeline">Everything above is real, and already done. Everything below is where it points, if it goes right.</p>
+  </div>
+</section>
 
 <section class="future">
   <div class="wrap">
@@ -143,7 +154,7 @@
       <p class="eyebrow">Ten years on</p>
       <span class="yr">2036</span>
       <h2>Off-world,<br>on call.</h2>
-      <p class="n">By 2036 he is lead engineer on humanity&rsquo;s first permanent Mars base, keeping the habitat alive a hundred and forty million miles from the nearest spare part.</p>
+      <p class="n">By 2036 he is lead engineer on humanity&rsquo;s first permanent Mars base, keeping the habitat alive a hundred and forty million miles from the nearest spare part. He still fixes things the way he did at seventeen, by knowing the machine better than anyone else in the room.</p>
       <p class="cap">An imagined future, generated for illustration</p>
     </div>
     <div class="fslot">
