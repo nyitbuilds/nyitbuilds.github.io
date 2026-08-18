@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniela Reyes | NYIT School of Management</title>
+<meta name="description" content="The certified four-year record of Daniela Reyes, Class of 2030, NYIT School of Management.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E1830'/%3E%3Cpath d='M16 3 L18.4 13.6 L29 16 L18.4 18.4 L16 29 L13.6 18.4 L3 16 L13.6 13.6 Z' fill='%23E0A02A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15233F;
+    --deep:#0E1830;
+    --gold:#E0A02A;
+    --clay:#A8452B;
+    --paper:#FBF5E7;
+    --paper2:#F3EAD6;
+    --rule:rgba(21,35,63,.16);
+    --soft:rgba(21,35,63,.62);
+    --disp:'Fraunces',Georgia,serif;
+    --prose:'Newsreader',Georgia,serif;
+    --meta:'Archivo',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--paper);color:var(--ink);font-family:var(--prose);font-size:17px;line-height:1.6}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+  .label{font-family:var(--meta);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.66rem}
+
+  /* ---- School mark bar: the mark appears once ---- */
+  .markbar{background:var(--deep);color:var(--paper)}
+  .markbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+                 flex-wrap:wrap;padding-top:.85rem;padding-bottom:.85rem}
+  .schoolmark{font-family:var(--meta);font-weight:600;text-transform:uppercase;
+              letter-spacing:.22em;font-size:.74rem;display:flex;align-items:center;gap:.7rem}
+  .schoolmark .bar{width:2px;height:1.05rem;background:var(--gold);display:inline-block}
+  .markbar .certline{font-family:var(--meta);font-size:.7rem;letter-spacing:.06em;color:rgba(251,245,231,.7)}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;overflow:hidden;background:
+        linear-gradient(180deg,var(--paper2) 0%, var(--paper) 100%);
+        border-bottom:1px solid var(--rule)}
+  .rose{position:absolute;right:-6rem;top:-5rem;width:32rem;height:32rem;opacity:.07;pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:15rem 1fr;gap:3rem;
+              align-items:center;padding-top:3.5rem;padding-bottom:3.5rem}
+  .frame{position:relative;background:var(--paper);padding:.6rem .6rem 2.4rem;
+         box-shadow:0 12px 30px rgba(21,35,63,.16);transform:rotate(-1.2deg)}
+  .frame img{aspect-ratio:4/5;object-fit:cover;width:100%}
+  .frame figcaption{position:absolute;left:0;right:0;bottom:.7rem;text-align:center;
+                    font-family:var(--meta);font-size:.6rem;letter-spacing:.16em;
+                    text-transform:uppercase;color:var(--soft)}
+  h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.7rem,7.2vw,4.3rem);
+     line-height:.95;letter-spacing:-.02em;margin:.45rem 0 .1rem}
+  .hero .klass{font-family:var(--disp);font-weight:600;font-style:italic;
+               font-size:clamp(1.1rem,2.6vw,1.35rem);color:var(--clay)}
+  .hero .naming{margin-top:1.15rem;font-size:1.06rem;max-width:32rem;color:var(--ink)}
+  .hero .editor{margin-top:.75rem;font-family:var(--meta);font-size:.78rem;line-height:1.5;
+                color:var(--soft);max-width:30rem;padding-top:.75rem;border-top:1px solid var(--rule)}
+  .hero .label{color:var(--clay)}
+
+  /* ---- Chapters ---- */
+  main{padding:1rem 0 0}
+  .chapter{padding:3.4rem 0 .5rem}
+  .chapter + .chapter{border-top:1px solid var(--rule)}
+  .chead{display:grid;grid-template-columns:9rem 1fr;gap:2rem;align-items:baseline;margin-bottom:2.2rem}
+  .cnum{font-family:var(--disp);font-weight:900;font-size:4.2rem;line-height:.8;
+        color:transparent;-webkit-text-stroke:1.5px var(--clay);text-align:right}
+  .chead .label{color:var(--clay);display:block;margin-bottom:.35rem}
+  .chead h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.5rem,3.6vw,1.95rem);
+            line-height:1.15;letter-spacing:-.01em}
+  .chead .years{font-family:var(--meta);font-weight:500;font-size:.86rem;color:var(--soft);margin-top:.3rem}
+
+  /* the rail: one continuous line through the four years */
+  .rail{position:relative}
+  .rail::before{content:"";position:absolute;left:10rem;top:.35rem;bottom:0;width:1px;background:var(--rule)}
+
+  .entry{display:grid;grid-template-columns:9rem 1fr;gap:2rem;padding-bottom:2.6rem;position:relative}
+  .when{text-align:right;padding-top:.28rem;position:relative}
+  .when time{font-family:var(--meta);font-weight:600;font-size:.76rem;letter-spacing:.1em;
+             text-transform:uppercase;color:var(--ink)}
+  .when::after{content:"";position:absolute;right:-20px;top:.5rem;width:9px;height:9px;
+               background:var(--gold);border-radius:50%}
+  .entry h3{font-family:var(--disp);font-weight:600;font-size:1.24rem;line-height:1.25;margin-bottom:.5rem}
+  .entry p{max-width:38rem}
+
+  /* the run of months with nothing in it */
+  .ticks{display:grid;grid-template-columns:9rem 1fr;gap:2rem;padding:1.2rem 0 3.4rem}
+  .ticks .col{grid-column:1;text-align:right}
+  .tick{position:relative;padding:1.9rem 0}
+  .tick time{font-family:var(--meta);font-weight:500;font-size:.72rem;letter-spacing:.1em;
+             text-transform:uppercase;color:rgba(21,35,63,.3)}
+  .tick::after{content:"";position:absolute;right:-18px;top:calc(50% - 2px);width:5px;height:5px;
+               background:rgba(21,35,63,.22);border-radius:50%}
+
+  /* ---- The March 2028 entry, set as a letter ---- */
+  .entry.letterrow .letter{background:var(--paper2);border-left:4px solid var(--clay);
+        padding:2rem 2.1rem 1.6rem;box-shadow:0 10px 26px rgba(21,35,63,.1);max-width:40rem}
+  .letter h3{font-family:var(--disp);font-weight:900;font-size:clamp(1.45rem,3.4vw,1.85rem);
+             line-height:1.1;letter-spacing:-.015em;margin-bottom:1rem}
+  .letter p{font-family:var(--prose);font-weight:300;font-style:italic;
+            font-size:clamp(1.1rem,2.4vw,1.22rem);line-height:1.62;margin-bottom:.95rem}
+  .letter p.open{font-style:normal;font-weight:400}
+  .letter .sign{font-family:var(--disp);font-weight:600;font-style:italic;font-size:1.1rem;
+                color:var(--clay);margin-top:.2rem}
+  .entry.letterrow .when::after{width:13px;height:13px;background:var(--clay);right:-22px;top:.4rem}
+
+  /* ---- Alumni chapter ---- */
+  .alumni{background:var(--deep);color:var(--paper);margin-top:3rem;padding:3.6rem 0 3.2rem}
+  .alumni .chip{display:inline-block;font-family:var(--meta);font-weight:700;text-transform:uppercase;
+                letter-spacing:.2em;font-size:.66rem;color:var(--deep);background:var(--gold);
+                padding:.4rem .9rem;border-radius:2px}
+  .alumni h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,2.7rem);
+             line-height:1.05;letter-spacing:-.02em;margin:1.1rem 0 .3rem}
+  .alumni .alumhead{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .alumni .credit{font-family:var(--meta);font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;
+                  color:rgba(251,245,231,.55)}
+  .alumni .when2{font-family:var(--meta);font-weight:600;font-size:.76rem;letter-spacing:.14em;
+                 text-transform:uppercase;color:var(--gold);margin-top:1.5rem}
+  .alumni p.body{font-size:1.1rem;line-height:1.65;max-width:38rem;margin-top:1.1rem;color:rgba(251,245,231,.9)}
+  .alumni .note{font-family:var(--meta);font-size:.74rem;color:rgba(251,245,231,.55);
+                margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(251,245,231,.18);max-width:34rem}
+
+  footer{padding:2.2rem 0 2.8rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;align-items:flex-start}
+  .disclaimer{font-family:var(--meta);font-size:.76rem;line-height:1.6;color:var(--soft);max-width:32rem}
+  .motto{font-family:var(--meta);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--soft)}
+
+  @media (max-width:52rem){
+    .hero .wrap{grid-template-columns:1fr;gap:2rem;padding-top:2.5rem;padding-bottom:2.75rem}
+    .frame{width:min(13rem,54vw);transform:rotate(-1.2deg)}
+    .rose{right:-9rem;top:-7rem;width:24rem;height:24rem}
+    .rail::before{left:0;top:.2rem}
+    .chead{grid-template-columns:1fr;gap:.4rem;padding-left:1.6rem;margin-bottom:1.6rem}
+    .cnum{text-align:left;font-size:3rem;margin-bottom:.4rem}
+    .entry{grid-template-columns:1fr;gap:.35rem;padding-left:1.6rem;padding-bottom:2.2rem}
+    .when{text-align:left;padding-top:0}
+    .when::after{right:auto;left:-29.6px;top:.38rem}
+    .ticks{grid-template-columns:1fr;padding-left:1.6rem}
+    .ticks .col{text-align:left}
+    .tick{padding:1.5rem 0}
+    .tick::after{right:auto;left:-27.6px}
+    .entry.letterrow .letter{padding:1.5rem 1.4rem 1.2rem;margin-top:.5rem}
+    .entry.letterrow .when::after{left:-31.6px;top:.32rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="markbar">
+  <div class="wrap">
+    <div class="schoolmark">NY Tech <span class="bar"></span> School of Management</div>
+    <div class="certline">Certified student record</div>
+  </div>
+</div>
+
+<header class="hero">
+  <svg class="rose" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="#15233F" stroke-width="1.1">
+      <circle cx="100" cy="100" r="88"/><circle cx="100" cy="100" r="66"/><circle cx="100" cy="100" r="26"/>
+      <path d="M100 4 L112 88 L100 196 L88 88 Z"/>
+      <path d="M4 100 L88 112 L196 100 L88 88 Z"/>
+      <path d="M32 32 L104 96 L168 168 L96 104 Z"/>
+      <path d="M168 32 L104 104 L32 168 L96 96 Z"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <figure class="frame">
+      <img src="portrait.jpg" alt="Daniela Reyes" width="800" height="1000">
+      <figcaption>Portrait day, August 2026</figcaption>
+    </figure>
+    <div>
+      <p class="label">The four-year record of</p>
+      <h1>Daniela Reyes</h1>
+      <p class="klass">Class of 2030 &middot; B.S. Marketing, marketing analytics</p>
+      <p class="naming">A certified student record maintained by the School of Management. Twenty entries, four years, written by Daniela as she went.</p>
+      <p class="editor">Every entry on this page is reviewed and published by the School&rsquo;s managing editor. Nothing appears here that the School has not confirmed.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== Chapter one ===================== -->
+  <section class="chapter" aria-labelledby="ch1">
+    <div class="wrap">
+      <div class="chead">
+        <div class="cnum">1</div>
+        <div>
+          <span class="label">Chapter one</span>
+          <h2 id="ch1">First year</h2>
+          <p class="years">2026&ndash;27</p>
+        </div>
+      </div>
+
+      <div class="rail">
+
+        <article class="entry">
+          <div class="when"><time datetime="2026-08">Aug 2026</time></div>
+          <div>
+            <h3>Day one, on the record</h3>
+            <p>They took my picture in the morning and handed me a website by the afternoon. I&rsquo;ve kept a restaurant&rsquo;s books since I was fifteen, so I know what a record is good for: you keep it, and later it argues for you. I&rsquo;m starting in marketing because I like the part where you find out what people want and then go get it for them. Four years from now I&rsquo;d like to read this page and recognize the person who wrote it. Let&rsquo;s see.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2026-09">Sep 2026</time></div>
+          <div>
+            <h3>Marketing club, first meeting</h3>
+            <p>Forty people in a room that seats thirty. I signed up at orientation and then almost talked myself out of going, which would have been a waste of a good pen. I did DECA all through Baymeadow and made the state finals, so I know how these rooms work: half the people are waiting for someone else to speak first. I spoke first. The club is running a campaign for the spring fundraiser and I put my name down for the numbers side, because nobody fights you for that one.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2026-10">Oct 2026</time></div>
+          <div>
+            <h3>The assessment agreed with me</h3>
+            <p>Ninety questions about what I enjoy and what I avoid, and the report came back marketing, advertising, and small business management. My advisor asked whether that matched my own guess. It matched exactly, which is either reassuring or proof that I&rsquo;ve been telling everyone the same story since tenth grade. She showed me the ranking under the headline, where research and data work scored higher than I expected, and I filed that away. Marketing stays the working guess. Now it&rsquo;s a guess with evidence behind it.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2026-11">Nov 2026</time></div>
+          <div>
+            <h3>Two hours on how to study</h3>
+            <p>The academic success workshop, which I went into thinking I had handled, because I&rsquo;ve run payroll on a Sunday night with the fryer going. Turns out the thing I do badly is estimating how long reading takes. I was off by half, every single time. So now I block reading like shifts, with a start time and an end time, and I stop when the block stops. My economics reading has been finished by Thursday three weeks running, which has never once happened in my life.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2027-03">Mar 2027</time></div>
+          <div>
+            <h3>The bakery campaign</h3>
+            <p>Four of us, one imaginary budget, and a real bakery two blocks from campus that agreed to be our subject for the first-year showcase. We interviewed eleven of their customers and found that the morning crowd and the afternoon crowd don&rsquo;t overlap at all. So we built everything around the four o&rsquo;clock slump: a small afternoon box, priced for one person. The judges liked that we asked people first. I liked that the owner asked for our slides afterward. My Tuesday fix at the restaurant was the same idea, three years earlier.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2027-04">Apr 2027</time></div>
+          <div>
+            <h3>Four years on one page</h3>
+            <p>My advisor and I put the whole degree on a single sheet: courses by semester, the internship window, the summer I should be applying, and the two electives I get to spend on whatever I want. Seeing it laid out made me competitive with it. There&rsquo;s a research assistantship in year three that I&rsquo;m already thinking about. She told me to bring the sheet back every semester and change it, because a plan nobody changes is decoration. Mine is taped inside my closet door.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Chapter two ===================== -->
+  <section class="chapter" aria-labelledby="ch2">
+    <div class="wrap">
+      <div class="chead">
+        <div class="cnum">2</div>
+        <div>
+          <span class="label">Chapter two</span>
+          <h2 id="ch2">Second year</h2>
+          <p class="years">2027&ndash;28</p>
+        </div>
+      </div>
+
+      <div class="rail">
+
+        <article class="entry">
+          <div class="when"><time datetime="2027-09">Sep 2027</time></div>
+          <div>
+            <h3>Sophomore year, five courses</h3>
+            <p>Statistics is on the list this term, because marketing analytics needs it and I put it off last spring. I kept my summer hours at the store, so the week goes class, shift, class, shift, and the club whenever I can make it. They elected me to the campaign committee, which meets at seven in the morning, that being the hour nobody else wanted. Statistics starts slow. I&rsquo;m told it doesn&rsquo;t stay slow. Ask me in December.</p>
+          </div>
+        </article>
+
+        <div class="ticks" aria-hidden="true">
+          <div class="col">
+            <div class="tick"><time>Oct 2027</time></div>
+            <div class="tick"><time>Nov 2027</time></div>
+            <div class="tick"><time>Dec 2027</time></div>
+            <div class="tick"><time>Jan 2028</time></div>
+          </div>
+        </div>
+
+        <article class="entry">
+          <div class="when"><time datetime="2028-02">Feb 2028</time></div>
+          <div>
+            <h3>Front desk, tutoring center</h3>
+            <p>New job, on campus, at the front desk of the tutoring center. I sign people in, keep the schedule, and get paid to be twenty feet from a statistics tutor twice a week. The hours are fewer and they fit between classes, which is the whole point. I gave notice at the store on a Tuesday and my manager was decent about it. Five courses and this desk, and for the first time since August I know what every week looks like before it starts.</p>
+          </div>
+        </article>
+
+        <article class="entry letterrow">
+          <div class="when"><time datetime="2028-03">Mar 2028</time></div>
+          <div class="letter">
+            <h3>The semester that almost ended it</h3>
+            <p class="open">I passed statistics. C plus, and I&rsquo;ll take it.</p>
+            <p>Last fall I was working twenty-six hours a week at a store forty minutes from campus, failing one class, and deciding that the failing class was proof about me rather than proof about my schedule. I stopped writing here because I didn&rsquo;t want it on the record. Nobody was going to take this page down. I could go silent instead, so I did.</p>
+            <p>What fixed it was a job I can reach in ten minutes and a tutor twice a week. Nobody had to talk me back into wanting this. Same brain, different week.</p>
+            <p class="sign">Daniela</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2028-04">Apr 2028</time></div>
+          <div>
+            <h3>The summit, six months late</h3>
+            <p>The careers summit was on my calendar for October and I got to it in April. Twenty-odd employers, most of them wanting to talk about brand work. The one I kept circling back to was a woman who runs campaign analytics for a grocery chain, whose entire job is working out which advertising moved anything. Statistics, of all things. I have a C plus and strong opinions about regression now, so I asked her good questions. Marketing analytics goes on the list. I want to see it up close before I commit to it.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Chapter three ===================== -->
+  <section class="chapter" aria-labelledby="ch3">
+    <div class="wrap">
+      <div class="chead">
+        <div class="cnum">3</div>
+        <div>
+          <span class="label">Chapter three</span>
+          <h2 id="ch3">Third year</h2>
+          <p class="years">2028&ndash;29</p>
+        </div>
+      </div>
+
+      <div class="rail">
+
+        <article class="entry">
+          <div class="when"><time datetime="2028-09">Sep 2028</time></div>
+          <div>
+            <h3>Micro-internship one: the nonprofit</h3>
+            <p>Three weeks, ten hours a week, rebranding work for a literacy nonprofit in Old Westbury. I liked the people enormously. Every meeting ended with somebody thanking somebody. I did not like the work. We argued about a logo for nine days while I kept thinking about the survey nobody had run. Verdict: right organization, wrong seat. Three weeks told me something about myself that four courses would not have, and I got to find it out on a schedule that cost me almost nothing.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2028-11">Nov 2028</time></div>
+          <div>
+            <h3>Micro-internship two: this one</h3>
+            <p>Four weeks with a regional coffee roaster, going through a year of campaign data to work out which channels paid for themselves. Nobody asked me to make anything pretty. I built the model, found their email list earning twice what they assumed and their radio spend earning far less, and presented it to two people who argued with me productively for an hour. I have never been happier at a desk. Concentration filed: marketing analytics. The class I nearly failed is the reason I&rsquo;m employable.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2029-01">Jan 2029</time></div>
+          <div>
+            <h3>My mentor asks better questions than I do</h3>
+            <p>The School matched me with a graduate from 2014 who runs market research at a media company in Manhattan. We talked for fifty minutes and she spent forty of them asking me questions. She told me to stop describing myself as someone who is good with numbers and start describing what I did with them, which is a different sentence and a better one. She also said the fall I lost is a story I should be able to tell in ninety seconds. We meet monthly. I have homework.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2029-06">Jun&ndash;Aug 2029</time></div>
+          <div>
+            <h3>Ten weeks in Melville</h3>
+            <p>My CSEE internship: a consumer goods company, marketing analytics team, a real dataset and a real question and a manager who reviewed my code line by line. My project was whether the spring promotion brought in new households or discounted the ones already buying. Mostly the second, which is what nobody hoped, and I had to say so in a room with a vice president in it. She thanked me and asked what I would test next. I&rsquo;m told that is the job. I would like this job.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Chapter four ===================== -->
+  <section class="chapter" aria-labelledby="ch4">
+    <div class="wrap">
+      <div class="chead">
+        <div class="cnum">4</div>
+        <div>
+          <span class="label">Chapter four</span>
+          <h2 id="ch4">Fourth year</h2>
+          <p class="years">2029&ndash;30</p>
+        </div>
+      </div>
+
+      <div class="rail">
+
+        <article class="entry">
+          <div class="when"><time datetime="2029-10">Oct 2029</time></div>
+          <div>
+            <h3>Capstone: eleven months of receipts</h3>
+            <p>Team of four, working with a regional retail chain on attribution. Eleven months of spending across five channels, and one question: which of it worked. Their marketing director is sure the answer is paid search. I think the data is going to say something unflattering about paid search and something kind about the channel they nearly cut last year. We present in April. I&rsquo;m the one running the model, which is a sentence sophomore me would have found funny.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2030-02">Feb 2030</time></div>
+          <div>
+            <h3>Someone read the whole page</h3>
+            <p>Career fair, then three interviews. In the second one the manager had read this record start to finish. She asked about spring of 2028, the entry where I explain the semester I went missing. I told her what I told this page: the schedule was the problem and I fixed the schedule. She said most candidates hand her a version where nothing ever went wrong and she doesn&rsquo;t believe any of them. I got the second-round invitation on the train home. That entry has now paid for itself.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2030-04">Apr 2030</time></div>
+          <div>
+            <h3>Fifteen minutes in front of the judges</h3>
+            <p>We presented the capstone to four industry judges and a room of classmates. Eight slides, and one finding the client did not want: their paid search was mostly buying customers who were already coming. Two judges pushed hard on our methodology and we held up, because we had run the whole thing three ways before we believed it ourselves. The retail chain asked for the deck. My teammates and I went out for tacos afterward and did not discuss attribution once.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2030-05">May 2030</time></div>
+          <div>
+            <h3>Paid to do statistics. Imagine that.</h3>
+            <p>I accepted an offer as a marketing analyst at a consumer goods company on Long Island, starting in July. The title has the word analyst in it. Sophomore me, in the back row of a statistics lecture with a forty-minute commute to a retail job, would like a word with senior me. Four years ago I wrote here that I wanted to read this page and recognize the person who wrote it. I do. The middle of it was rough and I wouldn&rsquo;t trade it.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="when"><time datetime="2030-05">May 2030</time></div>
+          <div>
+            <h3>Graduation, and the page changes hands</h3>
+            <p>I graduated on a Sunday in the rain, with my mother shouting my name from somewhere around row forty. This page does not close today. It changes hands: my managing editor passes it to an editor in Alumni Relations, who writes to me once a year and asks what has changed. I never get the password, and I have decided that is the point of the whole thing. A record I could edit myself would be a r&eacute;sum&eacute;. Four years, one long gap in the middle, and the only person who has to be at peace with that is me. I am.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="alumni" aria-labelledby="alum">
+  <div class="wrap">
+    <div class="alumhead">
+      <span class="chip">Alumni update</span>
+      <span class="credit">Maintained with NYIT Alumni Relations</span>
+    </div>
+    <p class="when2"><time datetime="2031-06">June 2031</time></p>
+    <h2 id="alum">One year in</h2>
+    <p class="body">Still the same company, same team, and more of the model is mine now. In March I ran the analysis that ended a campaign we had been buying for six years, and nobody was angry with me, which I found remarkable. I take a night class in causal inference because I want my tools to be better than my instincts. If a sophomore ever reads this page: the year I almost quit is four entries up, and it decided nothing.</p>
+    <p class="note">Alumni entries are drafted from the graduate&rsquo;s annual reply and published by the Alumni Relations editor. The page remains the School&rsquo;s and remains certified. It is refreshed once a year for life.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="disclaimer">Demonstration prototype for the NYIT School of Management. This student is fictional. The school mark shown here is a placeholder for official art.</p>
+    <p class="motto">Think first, build fast</p>
+  </div>
+</footer>
+
+</body>
+</html>
