@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suresh Iyer · Student Record · NYIT School of Management</title>
-<meta name="description" content="The certified four-year student record of Suresh Iyer, Class of 2030, NYIT School of Management. Demonstration prototype.">
+<title>Suresh Iyer · NYIT School of Management</title>
+<meta name="description" content="Suresh Iyer, Class of 2030, NYIT School of Management. Demonstration prototype.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315233F'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23E0A02A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,9 +43,6 @@
               font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem}
   .schoolmark .bar{width:1px;height:1.1rem;background:rgba(244,238,224,.45)}
   .schoolmark .ny{color:var(--gold)}
-  .recid{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;
-         color:rgba(244,238,224,.62);text-transform:uppercase}
-
   .masthead .wrap{display:grid;grid-template-columns:11rem 1fr;gap:2.5rem;
                   align-items:center;padding-top:3.25rem;padding-bottom:2.75rem}
   .portrait{width:11rem;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
@@ -60,28 +57,11 @@
      line-height:1;letter-spacing:-.02em;margin:.45rem 0 .6rem}
   .degree{font-size:1rem;color:rgba(244,238,224,.86);max-width:32rem}
   .degree b{color:var(--cream);font-weight:600}
-  .whatitis{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid rgba(244,238,224,.18);
-            font-family:var(--disp);font-weight:340;font-size:clamp(1.02rem,2.2vw,1.2rem);
-            line-height:1.45;color:var(--cream);max-width:34rem}
-
-  /* Record summary strip */
-  .summary{background:var(--deep);color:var(--cream);border-top:1px solid rgba(244,238,224,.12)}
-  .summary .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
-                 padding-top:1.35rem;padding-bottom:1.35rem}
-  .summary .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
-              color:rgba(244,238,224,.55)}
-  .summary .v{font-family:var(--disp);font-weight:600;font-size:1.35rem;color:var(--gold);
-              line-height:1.2;margin-top:.15rem}
-  .summary .v small{font-family:var(--body);font-weight:500;font-size:.8rem;color:rgba(244,238,224,.8);
-                    display:block;letter-spacing:.01em}
-
-  /* Editor note */
-  .editorial{background:var(--paper2);border-bottom:1px solid var(--rule)}
-  .editorial .wrap{padding-top:.9rem;padding-bottom:.9rem;display:flex;gap:.75rem;
-                   align-items:baseline;flex-wrap:wrap}
-  .editorial p{font-size:.9rem;color:var(--muted);max-width:52rem}
-  .editorial .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;
-                  text-transform:uppercase;color:var(--ink);font-weight:600;white-space:nowrap}
+  .bio{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid rgba(244,238,224,.18);
+       font-family:var(--disp);font-weight:340;font-size:clamp(1.02rem,2.2vw,1.2rem);
+       line-height:1.45;color:var(--cream);max-width:34rem}
+  .stat{margin-top:.9rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;
+        text-transform:uppercase;color:rgba(244,238,224,.6)}
 
   /* ---------- Year index ---------- */
   .index{position:sticky;top:0;z-index:20;background:rgba(251,248,240,.94);
@@ -105,7 +85,6 @@
                color:var(--gold)}
   .yearhead h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.7rem,4.2vw,2.5rem);
                line-height:1.05;margin-top:.2rem;letter-spacing:-.01em}
-  .yearhead .sub{font-size:.95rem;color:rgba(244,238,224,.8);margin-top:.3rem;max-width:34rem}
   .tally{text-align:right;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
          text-transform:uppercase;color:rgba(244,238,224,.7);line-height:1.9}
   .tally b{color:var(--gold);font-weight:600;font-size:.9rem}
@@ -146,9 +125,6 @@
   .alumni .flag{display:inline-block;font-family:var(--mono);font-size:.63rem;font-weight:600;
                 letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--ink);
                 padding:.3rem .7rem;border-radius:2px}
-  .alumni .flagrow{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-  .alumni .credit{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;
-                  text-transform:uppercase;color:rgba(244,238,224,.68)}
   .alumni .grid{display:grid;grid-template-columns:7.5rem 1fr;gap:0;margin-top:1.6rem}
   .alumni .rail{text-align:right;padding-right:1.5rem}
   .alumni .seq{display:block;font-family:var(--mono);font-weight:600;font-size:1.05rem;color:var(--gold)}
@@ -158,24 +134,16 @@
   .alumni h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.8rem,4.4vw,2.6rem);
              line-height:1.05;margin-bottom:.7rem}
   .alumni p{color:rgba(244,238,224,.9);max-width:42rem;font-size:1.02rem}
-  .alumni .next{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(244,238,224,.18);
-                font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
-                color:rgba(244,238,224,.62)}
 
   /* ---------- Footer ---------- */
   footer{background:var(--paper2);border-top:1px solid var(--rule)}
-  footer .wrap{padding-top:1.75rem;padding-bottom:2.25rem;display:grid;
-               grid-template-columns:1fr 1fr;gap:1.5rem 2rem;align-items:start}
-  .fmeta{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
-         color:var(--muted);line-height:1.9;max-width:27rem}
-  .disc{font-size:.78rem;color:var(--muted);max-width:30rem;line-height:1.55}
+  footer .wrap{padding-top:1.6rem;padding-bottom:2rem}
+  .disc{font-size:.78rem;color:var(--muted);max-width:34rem;line-height:1.55}
 
   /* ---------- Responsive ---------- */
   @media (max-width:52rem){
     .masthead .wrap{grid-template-columns:1fr;gap:1.5rem;padding-top:2.25rem}
     .portrait{width:8.5rem}
-    .summary .wrap{grid-template-columns:repeat(2,1fr);gap:1rem .75rem}
-    footer .wrap{grid-template-columns:1fr}
     .yearhead .wrap{align-items:flex-start}
     .tally{text-align:left}
   }
@@ -208,7 +176,6 @@
   <div class="mastbar">
     <div class="wrap">
       <div class="schoolmark"><span class="ny">NY Tech</span><span class="bar"></span><span>School of Management</span></div>
-      <div class="recid">Student record 2030&#8239;/&#8239;SI&#8239;/&#8239;0417</div>
     </div>
   </div>
 
@@ -222,27 +189,12 @@
         <p class="eyebrow">Class of 2030</p>
         <h1>Suresh Iyer</h1>
         <p class="degree"><b>B.S. Business Administration</b>, concentration in Business Analytics. Enrolled August 2026. Graduated May 2030.</p>
-        <p class="whatitis">A certified student record, opened on his first day and maintained by the NYIT School of Management.</p>
+        <p class="bio">Analyst, pricing and network planning, at a logistics group in Melville. I like the problems where somebody eventually has to write down a number.</p>
+        <p class="stat">24 entries &middot; August 2026 to June 2031</p>
       </div>
     </div>
   </div>
-
-  <div class="summary">
-    <div class="wrap">
-      <div><div class="k">Record opened</div><div class="v">Aug 2026<small>Orientation week</small></div></div>
-      <div><div class="k">Entries published</div><div class="v">24<small>Across five years</small></div></div>
-      <div><div class="k">Status</div><div class="v">Alumni<small>Kept by Alumni Relations</small></div></div>
-      <div><div class="k">Last published</div><div class="v">Jun 2031<small>Alumni update</small></div></div>
-    </div>
-  </div>
 </header>
-
-<div class="editorial">
-  <div class="wrap">
-    <span class="lab">How this page is kept</span>
-    <p>Every entry below is reviewed and published by the managing editor of the School of Management before it appears here. Nothing is posted by the student alone. After graduation the record is kept to the same standard by NYIT Alumni Relations.</p>
-  </div>
-</div>
 
 <nav class="index" aria-label="Years">
   <div class="wrap">
@@ -264,9 +216,8 @@
       <div>
         <p class="n">Year one</p>
         <h2>2026&ndash;27</h2>
-        <p class="sub">On the record early. Six entries, beginning on his first morning at the School.</p>
       </div>
-      <div class="tally">Entries this year <b>06</b><br>On record to date <b>06</b></div>
+      <div class="tally">Entries this year <b>06</b><br>Entries to date <b>06</b></div>
     </div>
   </div>
 
@@ -277,7 +228,7 @@
         <div class="rail"><span class="seq">01</span><time datetime="2026-08">Aug 2026</time></div>
         <div class="col">
           <h3>Portrait day</h3>
-          <p>They took my portrait at nine in the morning on my first day, before I had found the building where my classes were. The photographer told me to stop squaring my shoulders like a robotics team photo. By that afternoon this page existed with one entry on it, which felt premature for a person who had done nothing at the School of Management yet. The welcome session said the record fills up if you show up. I decided to test the claim over four years.</p>
+          <p>They took my portrait at nine in the morning on my first day, before I had found the building where my classes were. The photographer told me to stop squaring my shoulders like a robotics team photo. I had ironed the shirt the night before, which my sister found funny enough to photograph. By that afternoon this page existed with one entry on it, which felt premature for a person who had not yet done anything at the School of Management. Ask me again in four years.</p>
           <p class="src"><span class="dot">&#9679;</span> Orientation week &middot; Welcome to the School of Management</p>
         </div>
       </article>
@@ -314,7 +265,7 @@
         <div class="col">
           <h3>Reconnaissance at the career fair</h3>
           <p>My first career fair was reconnaissance. I wore the one jacket I own, walked the floor twice before speaking to anybody, and mostly listened. Three companies used the word analyst and meant three different jobs: one meant queries and dashboards, one meant forecasting, one meant a person who sits in meetings and builds the slides. I collected three business cards and wrote on the back of each what analyst meant at that table. That was the whole take, and it was more than I expected from an afternoon in a gym.</p>
-          <p class="src"><span class="dot">&#9679;</span> Fall career fair &middot; Center for Student Engagement and Enterprise</p>
+          <p class="src"><span class="dot">&#9679;</span> Spring career fair &middot; Center for Student Engagement and Enterprise</p>
         </div>
       </article>
 
@@ -338,9 +289,8 @@
       <div>
         <p class="n">Year two</p>
         <h2>2027&ndash;28</h2>
-        <p class="sub">The record starts saying who he is. A major, a simulation, a first resume.</p>
       </div>
-      <div class="tally">Entries this year <b>06</b><br>On record to date <b>12</b></div>
+      <div class="tally">Entries this year <b>06</b><br>Entries to date <b>12</b></div>
     </div>
   </div>
 
@@ -361,7 +311,7 @@
         <div class="col">
           <h3>Major confirmed</h3>
           <p>I declared Business Administration with a concentration in Business Analytics. The form took eleven minutes. The decision took fourteen months and is documented directly above it, entry by entry, which is a strange thing to be able to say. The roadmap updated itself the same week and the required courses rearranged into something tighter than what I had. My mother asked what business analytics is. I told her it is the part where you find out whether the thing you built made any money.</p>
-          <p class="src"><span class="dot">&#9679;</span> Declaration of major &middot; Certified entry, roadmap updated</p>
+          <p class="src"><span class="dot">&#9679;</span> Declaration of major &middot; Business Analytics concentration</p>
         </div>
       </article>
 
@@ -412,9 +362,8 @@
       <div>
         <p class="n">Year three</p>
         <h2>2028&ndash;29</h2>
-        <p class="sub">The first lines an employer reads. An officer post, a placement, a summer that shipped.</p>
       </div>
-      <div class="tally">Entries this year <b>05</b><br>On record to date <b>17</b></div>
+      <div class="tally">Entries this year <b>05</b><br>Entries to date <b>17</b></div>
     </div>
   </div>
 
@@ -478,9 +427,8 @@
       <div>
         <p class="n">Year four</p>
         <h2>2029&ndash;30</h2>
-        <p class="sub">Launchpad. A capstone, two callbacks, a signature, and a page that stays open.</p>
       </div>
-      <div class="tally">Entries this year <b>06</b><br>On record to date <b>23</b></div>
+      <div class="tally">Entries this year <b>06</b><br>Entries to date <b>23</b></div>
     </div>
   </div>
 
@@ -536,8 +484,8 @@
         <div class="rail"><span class="seq">23</span><time datetime="2030-05">May 2030</time></div>
         <div class="col">
           <h3>Commencement</h3>
-          <p>I graduated on a Sunday in May with my family in row K and a cricket bat in the trunk of the car, for reasons that made sense at breakfast. Four years and twenty two entries before this one, none of them written by me alone. The keys passed that week from the managing editor to Alumni Relations, who keep an editor of their own and who will be the ones asking me every year what changed. Same standard, different office. I never held the keys and have no use for them, since a record I could edit myself would be a resume. The alumni chapter starts below.</p>
-          <p class="src"><span class="dot">&#9679;</span> Commencement &middot; B.S. Business Administration &middot; Record passed to Alumni Relations</p>
+          <p>I graduated on a Sunday in May with my family in row K and a cricket bat in the trunk of the car, for reasons that made sense at breakfast. My mother cried during the procession and denied it afterward in front of witnesses. Rohan, who told me in September of freshman year which professors answer email on weekends, crossed the stage eleven names ahead of me. What I will miss is the Wednesday six o&rsquo;clock meeting and the argument that always started around six thirty. The page stays up. I start work in July.</p>
+          <p class="src"><span class="dot">&#9679;</span> Commencement &middot; B.S. Business Administration, Business Analytics</p>
         </div>
       </article>
 
@@ -550,13 +498,12 @@
 <!-- ===================== ALUMNI ===================== -->
 <section class="alumni" id="alumni" aria-label="Alumni update">
   <div class="wrap">
-    <p class="flagrow"><span class="flag">Alumni update</span><span class="credit">Maintained with NYIT Alumni Relations</span></p>
+    <span class="flag">Alumni update</span>
     <div class="grid">
       <div class="rail"><span class="seq">24</span><time datetime="2031-06">Jun 2031</time></div>
       <div class="col">
         <h2>One year in</h2>
-        <p>One year in, my title changed to analyst II in June. Same team, pricing and network planning, more of the network than before. The dashboard I built as an intern in 2029 is still running at the other company, which I know because a former colleague sent me a screenshot with a joke about my color choices. Alumni Relations emailed me in May and asked what was new. I wrote four sentences back and this is what their editor made of them. The page changed hands at graduation and I cannot tell from reading it, which I take to be the point.</p>
-        <p class="next">Drafted from the graduate&rsquo;s annual reply &middot; Published by the Alumni Relations editor &middot; Next refresh due June 2032</p>
+        <p>One year in, my title changed to analyst II in June. Same team, pricing and network planning, more of the network than before. The dashboard I built as an intern in 2029 is still running at the other company, which I know because a former colleague sent me a screenshot with a joke about my color choices. I started a night class in forecasting in January, Tuesdays after work, and learned that the thing my capstone model was doing has a name in the textbook. My mother has asked when the promotion after this one arrives. June, I told her, and she wrote it down.</p>
       </div>
     </div>
   </div>
@@ -564,7 +511,6 @@
 
 <footer>
   <div class="wrap">
-    <p class="fmeta">Record 2030&#8239;/&#8239;SI&#8239;/&#8239;0417 &middot; 24 entries &middot; Opened Aug 2026 &middot; Last published Jun 2031<br>Published by the School&rsquo;s managing editor to May 2030, by NYIT Alumni Relations after</p>
     <p class="disc">Demonstration prototype for the NYIT School of Management. This student is fictional. School text mark shown as a placeholder for official art.</p>
   </div>
 </footer>

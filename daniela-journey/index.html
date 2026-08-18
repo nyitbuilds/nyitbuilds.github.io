@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daniela Reyes | NYIT School of Management</title>
-<meta name="description" content="The certified four-year record of Daniela Reyes, Class of 2030, NYIT School of Management.">
+<meta name="description" content="Daniela Reyes, Class of 2030, NYIT School of Management.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E1830'/%3E%3Cpath d='M16 3 L18.4 13.6 L29 16 L18.4 18.4 L16 29 L13.6 18.4 L3 16 L13.6 13.6 Z' fill='%23E0A02A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,12 +33,10 @@
 
   /* ---- School mark bar: the mark appears once ---- */
   .markbar{background:var(--deep);color:var(--paper)}
-  .markbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;
-                 flex-wrap:wrap;padding-top:.85rem;padding-bottom:.85rem}
+  .markbar .wrap{padding-top:.85rem;padding-bottom:.85rem}
   .schoolmark{font-family:var(--meta);font-weight:600;text-transform:uppercase;
               letter-spacing:.22em;font-size:.74rem;display:flex;align-items:center;gap:.7rem}
   .schoolmark .bar{width:2px;height:1.05rem;background:var(--gold);display:inline-block}
-  .markbar .certline{font-family:var(--meta);font-size:.7rem;letter-spacing:.06em;color:rgba(251,245,231,.7)}
 
   /* ---- Hero ---- */
   .hero{position:relative;overflow:hidden;background:
@@ -57,9 +55,8 @@
      line-height:.95;letter-spacing:-.02em;margin:.45rem 0 .1rem}
   .hero .klass{font-family:var(--disp);font-weight:600;font-style:italic;
                font-size:clamp(1.1rem,2.6vw,1.35rem);color:var(--clay)}
-  .hero .naming{margin-top:1.15rem;font-size:1.06rem;max-width:32rem;color:var(--ink)}
-  .hero .editor{margin-top:.75rem;font-family:var(--meta);font-size:.78rem;line-height:1.5;
-                color:var(--soft);max-width:30rem;padding-top:.75rem;border-top:1px solid var(--rule)}
+  .hero .bio{margin-top:1.35rem;font-size:1.06rem;max-width:31rem;color:var(--soft);
+             padding-top:1.1rem;border-top:1px solid var(--rule)}
   .hero .label{color:var(--clay)}
 
   /* ---- Chapters ---- */
@@ -115,19 +112,11 @@
                 padding:.4rem .9rem;border-radius:2px}
   .alumni h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,2.7rem);
              line-height:1.05;letter-spacing:-.02em;margin:1.1rem 0 .3rem}
-  .alumni .alumhead{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-  .alumni .credit{font-family:var(--meta);font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;
-                  color:rgba(251,245,231,.55)}
   .alumni .when2{font-family:var(--meta);font-weight:600;font-size:.76rem;letter-spacing:.14em;
-                 text-transform:uppercase;color:var(--gold);margin-top:1.5rem}
+                 text-transform:uppercase;color:var(--gold);margin-top:1.25rem}
   .alumni p.body{font-size:1.1rem;line-height:1.65;max-width:38rem;margin-top:1.1rem;color:rgba(251,245,231,.9)}
-  .alumni .note{font-family:var(--meta);font-size:.74rem;color:rgba(251,245,231,.55);
-                margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(251,245,231,.18);max-width:34rem}
-
   footer{padding:2.2rem 0 2.8rem}
-  footer .wrap{display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;align-items:flex-start}
   .disclaimer{font-family:var(--meta);font-size:.76rem;line-height:1.6;color:var(--soft);max-width:32rem}
-  .motto{font-family:var(--meta);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--soft)}
 
   @media (max-width:52rem){
     .hero .wrap{grid-template-columns:1fr;gap:2rem;padding-top:2.5rem;padding-bottom:2.75rem}
@@ -153,7 +142,6 @@
 <div class="markbar">
   <div class="wrap">
     <div class="schoolmark">NY Tech <span class="bar"></span> School of Management</div>
-    <div class="certline">Certified student record</div>
   </div>
 </div>
 
@@ -173,11 +161,9 @@
       <figcaption>Portrait day, August 2026</figcaption>
     </figure>
     <div>
-      <p class="label">The four-year record of</p>
       <h1>Daniela Reyes</h1>
       <p class="klass">Class of 2030 &middot; B.S. Marketing, marketing analytics</p>
-      <p class="naming">A certified student record maintained by the School of Management. Twenty entries, four years, written by Daniela as she went.</p>
-      <p class="editor">Every entry on this page is reviewed and published by the School&rsquo;s managing editor. Nothing appears here that the School has not confirmed.</p>
+      <p class="bio">Baymeadow High School, DECA state finalist, and three years on the family restaurant&rsquo;s books.</p>
     </div>
   </div>
 </header>
@@ -201,8 +187,8 @@
         <article class="entry">
           <div class="when"><time datetime="2026-08">Aug 2026</time></div>
           <div>
-            <h3>Day one, on the record</h3>
-            <p>They took my picture in the morning and handed me a website by the afternoon. I&rsquo;ve kept a restaurant&rsquo;s books since I was fifteen, so I know what a record is good for: you keep it, and later it argues for you. I&rsquo;m starting in marketing because I like the part where you find out what people want and then go get it for them. Four years from now I&rsquo;d like to read this page and recognize the person who wrote it. Let&rsquo;s see.</p>
+            <h3>Day one</h3>
+            <p>They took my picture in the morning and handed me a website by the afternoon. I&rsquo;ve kept a restaurant&rsquo;s books since I was fifteen, so I&rsquo;m comfortable writing things down and living with them afterward. I&rsquo;m starting in marketing because I like the part where you find out what people want and then go get it for them. Four years from now I&rsquo;d like to read this page and recognize the person who wrote it. Let&rsquo;s see.</p>
           </div>
         </article>
 
@@ -388,7 +374,7 @@
           <div class="when"><time datetime="2030-02">Feb 2030</time></div>
           <div>
             <h3>Someone read the whole page</h3>
-            <p>Career fair, then three interviews. In the second one the manager had read this record start to finish. She asked about spring of 2028, the entry where I explain the semester I went missing. I told her what I told this page: the schedule was the problem and I fixed the schedule. She said most candidates hand her a version where nothing ever went wrong and she doesn&rsquo;t believe any of them. I got the second-round invitation on the train home. That entry has now paid for itself.</p>
+            <p>Career fair, then three interviews. In the second one the manager had read the whole thing before I got there. She asked about spring of 2028, the entry where I explain the semester I went missing. I told her what I told this page: the schedule was the problem and I fixed the schedule. She said most candidates hand her a version where nothing ever went wrong, and she doesn&rsquo;t believe any of them. I got the second-round invitation on the train home, and read the March entry again for the first time in two years.</p>
           </div>
         </article>
 
@@ -411,8 +397,8 @@
         <article class="entry">
           <div class="when"><time datetime="2030-05">May 2030</time></div>
           <div>
-            <h3>Graduation, and the page changes hands</h3>
-            <p>I graduated on a Sunday in the rain, with my mother shouting my name from somewhere around row forty. This page does not close today. It changes hands: my managing editor passes it to an editor in Alumni Relations, who writes to me once a year and asks what has changed. I never get the password, and I have decided that is the point of the whole thing. A record I could edit myself would be a r&eacute;sum&eacute;. Four years, one long gap in the middle, and the only person who has to be at peace with that is me. I am.</p>
+            <h3>Graduation, in the rain</h3>
+            <p>I graduated on a Sunday in the rain, with my mother shouting my name from somewhere around row forty. She brought my grandmother, who has never asked what marketing analytics is and tells the neighbors I am an accountant. Four years, one long gap in the middle of them, and the only person who has to be at peace with that is me. I am. Somebody at the School will keep adding to this page after today, which I find strange, and like more than I expected to.</p>
           </div>
         </article>
 
@@ -424,21 +410,16 @@
 
 <section class="alumni" aria-labelledby="alum">
   <div class="wrap">
-    <div class="alumhead">
-      <span class="chip">Alumni update</span>
-      <span class="credit">Maintained with NYIT Alumni Relations</span>
-    </div>
+    <span class="chip">Alumni update</span>
     <p class="when2"><time datetime="2031-06">June 2031</time></p>
     <h2 id="alum">One year in</h2>
     <p class="body">Still the same company, same team, and more of the model is mine now. In March I ran the analysis that ended a campaign we had been buying for six years, and nobody was angry with me, which I found remarkable. I take a night class in causal inference because I want my tools to be better than my instincts. If a sophomore ever reads this page: the year I almost quit is four entries up, and it decided nothing.</p>
-    <p class="note">Alumni entries are drafted from the graduate&rsquo;s annual reply and published by the Alumni Relations editor. The page remains the School&rsquo;s and remains certified. It is refreshed once a year for life.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <p class="disclaimer">Demonstration prototype for the NYIT School of Management. This student is fictional. The school mark shown here is a placeholder for official art.</p>
-    <p class="motto">Think first, build fast</p>
   </div>
 </footer>
 
