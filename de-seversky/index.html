@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>de Seversky Studio</title>
+<meta name="description" content="The Spring 2027 de Seversky course plan as written, with eight proposed additions.">
+<meta property="og:title" content="de Seversky Studio">
+<meta property="og:description" content="The Spring 2027 de Seversky course plan as written, with eight proposed additions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230E1830%27/%3E%3Ccircle cx=%2711%27 cy=%2716%27 r=%274%27 fill=%27%23EE5A24%27/%3E%3Ccircle cx=%2721%27 cy=%2711%27 r=%273%27 fill=%27%2300A19E%27/%3E%3Ccircle cx=%2721%27 cy=%2721%27 r=%273%27 fill=%27%237048E8%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root {
+  --paper: #F4EEE0;
+  --sheet: #FFFDF8;
+  --ink: #15233F;
+  --ink-2: #44506A;
+  --muted: #8C909B;
+  --rule: #E3D9C4;
+  --navy: #0E1830;
+  --gold: #E0A02A;
+  --mkt: #EE5A24;
+  --mkt-t: #FDE7DC;
+  --ops: #00A19E;
+  --ops-t: #D3F2F1;
+  --design: #7048E8;
+  --design-t: #ECE5FE;
+  --scoped: #6B7385;
+  --bar-h: 56px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.55 Archivo, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; letter-spacing: -0.01em; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--navy); color: var(--paper); padding: 64px 16px 40px; }
+.wrap { max-width: 1240px; margin: 0 auto; }
+.kicker { color: var(--gold); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 12.5px; }
+.hero h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1; margin: 14px 0 14px; }
+.hero .sub { font-family: Fraunces, Georgia, serif; font-size: clamp(19px, 2.4vw, 25px); line-height: 1.3; max-width: 760px; margin: 0 0 18px; color: #F4EEE0; }
+.hero .lead { max-width: 720px; color: #C9CEDA; margin: 0 0 26px; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 0 0 28px; font-size: 13.5px; color: #DCE0EA; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.sw.mkt { background: var(--mkt); } .sw.ops { background: var(--ops); } .sw.design { background: var(--design); }
+.sw.scoped { border: 2px dashed #AEB4C2; background: transparent; }
+
+.overview { background: var(--sheet); color: var(--ink); border-radius: 14px; padding: 16px 16px 12px; }
+.ov-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; font-size: 13px; color: var(--ink-2); }
+.ov-title b { font-family: Fraunces, Georgia, serif; font-size: 16px; color: var(--ink); }
+.ov-grid { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 4px; }
+.ov-col { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0 4px; border-radius: 8px; }
+.ov-col:hover { background: #F3ECDD; }
+.ov-n { font-weight: 700; font-size: 14px; text-decoration: none; }
+.ov-d { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.ov-dots { display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 64px; padding-top: 4px; }
+.dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; text-decoration: none; transition: transform .15s; }
+.dot:hover { transform: scale(1.15); }
+.dot.lane-mkt { background: var(--mkt); } .dot.lane-ops { background: var(--ops); } .dot.lane-design { background: var(--design); }
+.dot.ring { background: transparent !important; border: 2.5px solid currentColor; }
+.dot.ring { color: var(--lane); }
+.scoped-dot { width: 14px; height: 14px; border: 2px dashed var(--scoped); background: transparent; }
+.ov-cm { font-size: 10px; font-weight: 600; color: var(--ink-2); letter-spacing: .04em; min-height: 14px; }
+.ov-foot { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* ---------- sticky bar ---------- */
+.bar { position: sticky; top: 0; z-index: 20; background: rgba(244,238,224,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: var(--bar-h); padding: 0 16px; }
+.bar-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-tools { display: flex; align-items: center; gap: 10px; }
+.seg { display: inline-flex; background: #E8DFCB; border-radius: 999px; padding: 3px; }
+.seg button { border: 0; background: transparent; font: 600 13px Archivo, sans-serif; color: var(--ink-2); padding: 7px 14px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--navy); color: var(--paper); }
+.btn-print { border: 1px solid var(--rule); background: var(--sheet); font: 600 13px Archivo, sans-serif; color: var(--ink); padding: 7px 14px; border-radius: 999px; cursor: pointer; }
+
+/* ---------- column heads ---------- */
+.cols-head { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); max-width: 1240px; margin: 36px auto 0; padding: 0 16px; }
+.cols-head div { font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 600; padding: 0 0 12px; }
+.cols-head .ch-plan { padding-left: 28px; }
+.cols-head small { display: block; font: 13px/1.4 Archivo, sans-serif; color: var(--ink-2); margin-top: 2px; }
+
+/* ---------- weeks ---------- */
+.weeks { max-width: 1240px; margin: 0 auto; padding: 0 16px 40px; }
+.week { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); scroll-margin-top: calc(var(--bar-h) + 12px); }
+.plan { background: var(--sheet); border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); padding: 22px 28px 18px; font-size: 13.5px; color: var(--ink-2); }
+.week:first-child .plan { border-top: 1px solid var(--rule); border-radius: 12px 12px 0 0; }
+.week:last-child .plan { border-bottom: 1px solid var(--rule); border-radius: 0 0 12px 12px; }
+.week + .week .plan { border-top: 1px solid #EEE7D7; }
+.wk-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+.wk-n { font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 19px; color: var(--ink); }
+.wk-d { font-size: 13px; color: var(--muted); }
+.wk-x, .wk-cm { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); background: #F1E3BF; padding: 2px 8px; border-radius: 999px; }
+.brk .plan { padding-top: 12px; padding-bottom: 12px; background: repeating-linear-gradient(-45deg, var(--sheet), var(--sheet) 8px, #F7F1E4 8px, #F7F1E4 16px); }
+.brk .wk-n { font-size: 15px; color: var(--muted); }
+.brk .wk-head { margin: 0; }
+
+.gh { margin: 12px 0 4px; }
+.gh.grp { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.gh.client { font-weight: 700; color: var(--ink); font-size: 13.5px; }
+.gh.agenda { font-style: italic; color: var(--ink); }
+.gh.deliv { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9A6B0C; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 14px; }
+.plan ul { margin: 0; padding-left: 18px; }
+.plan > .grp-block > ul { padding-left: 16px; }
+.plan li { margin: 1px 0; }
+.plan li::marker { color: #C6BBA3; }
+.muted { color: var(--muted); }
+.none { color: var(--muted); font-style: italic; font-size: 12.5px; padding-left: 16px; }
+.t { -webkit-box-decoration-break: clone; box-decoration-break: clone; border-radius: 4px; padding: 1px 6px; margin: 0 -6px; transition: background-color .35s, box-shadow .35s, color .35s; }
+.t.lit { color: var(--ink); }
+.t.lit[data-lane="mkt"] { background: var(--mkt-t); box-shadow: inset 3px 0 0 var(--mkt); }
+.t.lit[data-lane="ops"] { background: var(--ops-t); box-shadow: inset 3px 0 0 var(--ops); }
+.t.lit[data-lane="design"] { background: var(--design-t); box-shadow: inset 3px 0 0 var(--design); }
+
+.scoped { border: 1.5px dashed #A9AFBC; border-radius: 10px; padding: 10px 12px; margin: 8px 0 8px; background: #FAF8F3; color: var(--ink-2); scroll-margin-top: calc(var(--bar-h) + 24px); }
+.scoped-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--scoped); margin-bottom: 4px; }
+.scoped blockquote { margin: 0 0 6px; font-family: Fraunces, Georgia, serif; font-size: 14px; line-height: 1.45; color: var(--ink); }
+.scoped cite { display: block; font: 11.5px Archivo, sans-serif; font-style: normal; color: var(--muted); margin-top: 3px; }
+.scoped p { margin: 0; font-size: 13px; }
+
+/* spine */
+.spine { position: relative; }
+.spine::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: #D8CCB2; }
+.node { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 30px; height: 30px; border-radius: 50%; background: var(--paper); border: 2px solid #CDBF9F; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--ink-2); }
+.has-add .node { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+.node-brk { width: 12px; height: 12px; top: 16px; }
+
+/* ---------- cards ---------- */
+.add { padding: 14px 0 22px; display: flex; flex-direction: column; gap: 18px; }
+.card { position: relative; background: #fff; border-radius: 14px; overflow: visible; box-shadow: 0 1px 2px rgba(14,24,48,.06), 0 8px 28px rgba(14,24,48,.08); scroll-margin-top: calc(var(--bar-h) + 16px); }
+.card::before { content: ""; position: absolute; left: -10px; top: 22px; border: 10px solid transparent; border-left: 0; border-right-color: var(--lane); }
+.lane-mkt { --lane: var(--mkt); --lane-t: var(--mkt-t); }
+.lane-ops { --lane: var(--ops); --lane-t: var(--ops-t); }
+.lane-design { --lane: var(--design); --lane-t: var(--design-t); }
+.card-top { display: flex; align-items: center; gap: 10px; background: var(--lane); color: #fff; padding: 11px 16px; border-radius: 14px 14px 0 0; font-size: 12.5px; font-weight: 600; }
+.card-num { width: 24px; height: 24px; border-radius: 50%; background: #fff; color: var(--lane); display: grid; place-items: center; font-weight: 700; font-size: 12.5px; flex: none; }
+.card-tag { letter-spacing: .06em; text-transform: uppercase; }
+.card-weeks { margin-left: auto; opacity: .92; white-space: nowrap; }
+.card h3 { font-size: 21px; line-height: 1.25; margin: 16px 18px 6px; color: var(--ink); }
+.card dl { margin: 0; padding: 4px 18px 0; }
+.card .f { padding: 9px 0; border-top: 1px solid #F0EADD; }
+.card .f:first-child { border-top: 0; }
+.card dt { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--lane); margin-bottom: 2px; }
+.card dd { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.gains { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 8px 18px 4px; }
+.gain { background: var(--lane-t); border-radius: 10px; padding: 10px 12px; }
+.gl { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+.gain p { margin: 0; font-size: 14px; color: var(--ink); }
+.asks { margin: 10px 18px 16px; padding-top: 10px; border-top: 1px solid #F0EADD; font-size: 13.5px; color: var(--ink-2); }
+.al { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink); margin-right: 6px; }
+
+.card-return { position: relative; display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 2px solid var(--lane); border-radius: 12px; padding: 12px 14px; font-size: 14px; color: var(--ink-2); scroll-margin-top: calc(var(--bar-h) + 16px); }
+.card-return .card-num { background: var(--lane); color: #fff; }
+.card-return p { margin: 0; }
+.card-return a { color: var(--lane); font-weight: 600; }
+
+/* reveal: content is visible without JS; JS adds a slide-in */
+.js .reveal { opacity: 0; transform: translateX(32px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+/* plan-only view */
+body[data-view="plan"] .add > *, body[data-view="plan"] .scoped, body[data-view="plan"] .ov-dots > * { display: none; }
+body[data-view="plan"] .has-add .node { background: var(--paper); border-color: #CDBF9F; color: var(--ink-2); }
+body[data-view="plan"] .t.lit { background: none; box-shadow: none; color: inherit; }
+body[data-view="plan"] .cols-head .ch-add { visibility: hidden; }
+
+/* ---------- closing ---------- */
+.closing { max-width: 1240px; margin: 0 auto; padding: 20px 16px 72px; }
+.closing h2 { font-size: 32px; margin: 0 0 18px; }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ba > div { border-radius: 14px; padding: 22px 24px; }
+.ba .before { background: var(--sheet); border: 1px solid var(--rule); }
+.ba .after { background: var(--navy); color: var(--paper); }
+.ba .lbl { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+.ba .before .lbl { color: var(--muted); }
+.ba .after .lbl { color: var(--gold); }
+.ba p { font-family: Fraunces, Georgia, serif; font-size: 20px; line-height: 1.4; margin: 0 0 8px; }
+details.how { margin-top: 28px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 4px 22px; }
+details.how summary { cursor: pointer; font-family: Fraunces, Georgia, serif; font-size: 19px; font-weight: 600; padding: 14px 0; }
+details.how ol { margin: 0 0 18px; padding-left: 22px; color: var(--ink-2); }
+details.how li { margin: 6px 0; }
+details.how p { color: var(--ink-2); margin: 0 0 8px; }
+footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5px; padding: 22px 16px 40px; text-align: center; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 880px) {
+  .cols-head { display: none; }
+  .week { grid-template-columns: minmax(0, 1fr); }
+  .spine { display: none; }
+  .plan { border-radius: 12px !important; border: 1px solid var(--rule) !important; margin-top: 14px; padding: 18px 16px 14px; }
+  .add { padding: 12px 0 4px; }
+  .add:empty { display: none; }
+  .card::before { display: none; }
+  .js .reveal { transform: translateY(24px); }
+  .gains { grid-template-columns: 1fr; }
+  .ba { grid-template-columns: 1fr; }
+  .ov-grid { gap: 1px; }
+  .ov-d { font-size: 9px; }
+  .ov-cm { font-size: 8px; letter-spacing: 0; }
+  .dot { width: 18px; height: 18px; font-size: 10px; }
+  .bar-title { display: none; }
+  .bar .wrap { justify-content: center; }
+}
+@media (max-width: 420px) {
+  .ov-d { display: none; }
+  .seg button { padding: 7px 10px; }
+}
+
+/* ---------- print ---------- */
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff; font-size: 12px; }
+  .bar { display: none; }
+  .hero { padding: 24px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .card, .card-return, .scoped, .ba > div { break-inside: avoid; }
+  .card-top, .gain, .dot, .node, .ba .after, .t.lit { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  details.how { display: block; }
+  details.how > *:not(summary) { display: block; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body data-view="add">
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Spring 2027 · Interdisciplinary course</div>
+    <h1>de Seversky Studio</h1>
+    <p class="sub">The course plan as written, with eight proposed additions.</p>
+    <p class="lead">The plan runs week by week. Each addition appears beside the week it belongs to. Each card shows who benefits and what the addition asks of the mansion's staff. As a card scrolls into view, the lines of the plan it builds on light up in the card's color.</p>
+    <div class="legend">
+      <span><i class="sw mkt"></i>Marketing</span>
+      <span><i class="sw ops"></i>Operations</span>
+      <span><i class="sw design"></i>Course design</span>
+      <span><i class="sw scoped"></i>Scoped in the course description, not yet scheduled</span>
+    </div>
+    <nav class="overview" aria-label="Overview of the fifteen classes">
+      <div class="ov-title"><b>Fifteen classes at a glance</b><span>Select a dot to jump to it</span></div>
+      <div class="ov-grid"><div class="ov-col"><a class="ov-n" href="#class-1">1</a><div class="ov-d">Jan 25</div><div class="ov-dots"><a class="dot lane-design" href="#card-objectives" title="1. Every student leaves able to trace a design choice to its effect on the P&amp;L.">1</a></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-2">2</a><div class="ov-d">Feb 1</div><div class="ov-dots"><a class="dot lane-mkt" href="#card-marketing-lecture" title="2. Robert gets a revenue forecast based on what his own customers say they would buy.">2</a><a class="dot lane-design" href="#card-stop-conditions" title="3. The Board can trust the verdict, because Robert and the trustee set the stop conditions before any numbers came in.">3</a></div><div class="ov-cm">CM1</div></div><div class="ov-col"><a class="ov-n" href="#class-3">3</a><div class="ov-d">Feb 8</div><div class="ov-dots"><a class="dot lane-mkt" href="#card-pricing-test" title="4. Robert learns what couples would pay for a wedding with rooms upstairs, before NYIT commits to the restoration.">4</a><a class="dot scoped-dot" href="#scoped-pool" title="Scoped, not scheduled: Pool restoration"></a></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-4">4</a><div class="ov-d">Feb 15</div><div class="ov-dots"><a class="dot lane-ops" href="#card-operations-lecture" title="5. Robert sees how many staff he would need for five-star service on a wedding night, and what they would cost.">5</a></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-5">5</a><div class="ov-d">Feb 22</div><div class="ov-dots"></div><div class="ov-cm">CM2</div></div><div class="ov-col"><a class="ov-n" href="#class-6">6</a><div class="ov-d">Mar 1</div><div class="ov-dots"><a class="dot lane-ops" href="#card-conflict-calendar" title="6. Robert sees, date by date, which current bookings the hotel and spa would conflict with.">6</a><a class="dot scoped-dot" href="#scoped-ada" title="Scoped, not scheduled: ADA requirements"></a></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-7">7</a><div class="ov-d">Mar 8</div><div class="ov-dots"><a class="dot lane-design" href="#card-incremental-pl" title="7. NYIT counts only the money that the hotel and spa add to what the mansion earns today.">7</a><a class="dot scoped-dot" href="#scoped-phasing" title="Scoped, not scheduled: Phasing around operations"></a><a class="dot scoped-dot" href="#scoped-grants" title="Scoped, not scheduled: Grant analysis"></a></div><div class="ov-cm">CM3</div></div><div class="ov-col"><a class="ov-n" href="#class-8">8</a><div class="ov-d">Mar 15</div><div class="ov-dots"><a class="dot ring lane-design" href="#card-stop-conditions-return" title="Addition 3 tested again">3</a></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-9">9</a><div class="ov-d">Mar 29</div><div class="ov-dots"></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-10">10</a><div class="ov-d">Apr 5</div><div class="ov-dots"><a class="dot scoped-dot" href="#scoped-value-engineering" title="Scoped, not scheduled: Value engineering"></a></div><div class="ov-cm">CM4</div></div><div class="ov-col"><a class="ov-n" href="#class-11">11</a><div class="ov-d">Apr 12</div><div class="ov-dots"></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-12">12</a><div class="ov-d">Apr 19</div><div class="ov-dots"></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-13">13</a><div class="ov-d">Apr 26</div><div class="ov-dots"></div><div class="ov-cm"></div></div><div class="ov-col"><a class="ov-n" href="#class-14">14</a><div class="ov-d">May 3</div><div class="ov-dots"><a class="dot scoped-dot" href="#scoped-vr-tour" title="Scoped, not scheduled: Virtual reality tour"></a></div><div class="ov-cm">CM5</div></div><div class="ov-col"><a class="ov-n" href="#class-15">15</a><div class="ov-d">May 10</div><div class="ov-dots"><a class="dot lane-design" href="#card-board-memo" title="8. Peter and the Board receive a two-page decision they can act on at their next meeting.">8</a></div><div class="ov-cm">Final</div></div></div>
+      <div class="ov-foot">CM = client meeting. A ring marks a return to an earlier addition.</div>
+    </nav>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="bar-title">de Seversky Studio</div>
+    <div class="bar-tools">
+      <div class="seg" role="group" aria-label="View">
+        <button type="button" data-view="plan" aria-pressed="false">Plan as written</button>
+        <button type="button" data-view="add" aria-pressed="true">With additions</button>
+      </div>
+      <button type="button" class="btn-print" onclick="window.print()">Print</button>
+    </div>
+  </div>
+</div>
+
+<div class="cols-head">
+  <div class="ch-plan">The plan as written<small>Syllabus and weekly work plan, August 17, 2026</small></div>
+  <div></div>
+  <div class="ch-add">Proposed additions<small>Eight additions, timed to the deliverables they feed</small></div>
+</div>
+
+<main class="weeks">
+
+<section class="week has-add" id="class-1">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 1</span><span class="wk-d">Week of January 25, 2027</span></div>
+    <div class="grp-block"><ul><li><span>Class Introduction</span><ul><li><span>Faculty</span></li><li><span>Students</span></li></ul></li><li><span>Project Introduction</span><ul><li><span>Proposed 5 Star Hotel and Health and Wellness Spa Development for de Seversky Mansion</span></li></ul></li><li><span>Consultant Teams and Responsibilities</span><ul><li><span>COM: Health &amp; Wellness Team</span><ul><li><span>Program development</span></li><li><span>Design review</span></li><li><span>Operational development</span></li></ul></li><li><span>SoAD: Architectural/CM Team</span><ul><li><span>Hotel Team</span><ul><li><span>Restoration Scope of Work and Documentation</span></li><li><span>de Seversky Management Office Relocation</span></li><li><span>NYIT Development Office Relocation</span></li></ul></li><li><span>Health and Wellness Spa</span><ul><li><span>Proposed Site for the New Facility</span></li><li><span>Proposed Floor Plan Layouts and Building Design</span></li></ul></li><li><span>Construction Cost Projections</span></li></ul></li><li><span>Management Team</span><ul><li><span>Operational Budget</span></li><li><span>Revenue Projections</span></li><li><span>P&amp;L Analysis</span></li><li><span>Financing Analysis</span></li></ul></li></ul></li><li><span>Faculty Responsibilities</span><ul><li><span>SHP</span></li><li><span>SoAD</span></li><li><span>SOM</span></li></ul></li><li><span class="t" data-for="objectives" data-lane="design">Class Structure</span><ul><li><span>Weekly Project Team Meeting (1 Hr.)</span></li><li><span>Class Time (2 Hr.)</span></li></ul></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">1</span></div>
+  <div class="add">
+<article class="card lane-design reveal" id="card-objectives" data-card="objectives">
+  <header class="card-top">
+    <span class="card-num">1</span>
+    <span class="card-tag">Course design</span>
+    <span class="card-weeks">Class 1</span>
+  </header>
+  <h3>Every student leaves able to trace a design choice to its effect on the P&amp;L.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>Learning objectives for each school, set out in Class 1. Each class ends with a 20-minute session. In the session, one team names a decision made that week and shows how the decision changed the budget or the forecast.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>In the syllabus, each team has a list of deliverables. No student has a list of things to learn. Last year, faculty ended each class with a similar session.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Teams take turns presenting the weekly decision. The other schools question them.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>An architecture student can explain what one more spa room does to the payback period. A finance student can explain why fire code on a historic stair can cap the number of guest rooms.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT can show accreditors (AACSB and NAAB) measured learning from an interdisciplinary course.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Nothing.</div>
+</article></div>
+</section>
+<section class="week has-add" id="class-2">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 2</span><span class="wk-d">Week of February 1, 2027</span><span class="wk-cm">Client Meeting #1</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting at de Seversky Mansion:</div></div><div class="grp-block"><div class="gh client">Client Meeting #1</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Client Meeting and Project Introduction</div><ul><li><span>Client and Consulting Team Introductions</span><ul><li><span>Client/Management Introduction, Roles &amp; Responsibilities</span></li><li><span>Roles &amp; Responsibilities Sr. Leadership, Board of Trustees and Guests</span></li></ul></li><li><span>Hotel Program Discussion / Goals Objectives</span></li><li><span>Health and Wellness Spa Discussion / Goals Objectives</span></li><li><span>Relocation of de Seversky Management Team and NYIT Development Offices</span></li><li><span>Mansion Tour</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda:</div><ul><li><span class="t" data-for="marketing-lecture" data-lane="mkt">Discussion of Market Analysis for 5 Star Hotels / Health and Wellness Spas</span><ul><li><span>Competition</span><ul><li><span>Successful Enterprises / Factors</span></li><li><span>Failed Enterprises / Factors</span></li></ul></li></ul></li><li><span class="t" data-for="stop-conditions" data-lane="design">Discussion of Criteria for de Seversky Program Recommendations</span><ul><li><span>Amenities</span></li><li><span>Size and locations for Spa</span></li><li><span>Maximize Revenue</span></li><li><span>Efficient Operations</span></li><li><span>Costs:</span><ul><li><span>capital</span></li><li><span>operational</span></li></ul></li><li><span>Other Considerations</span></li></ul></li><li><span>Facility discussion on the development of a Health and Wellness program</span></li><li><span>Discussion of Development of Existing Conditions Drawings</span><ul><li><span>Field examination</span></li></ul></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 3</div><ul><li><span class="t" data-for="marketing-lecture" data-lane="mkt">Market Research Findings</span></li><li><span>Proposed Program Recommendations</span></li><li><span>Spa Site Location Options</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">2</span></div>
+  <div class="add">
+<article class="card lane-mkt reveal" id="card-marketing-lecture" data-card="marketing-lecture">
+  <header class="card-top">
+    <span class="card-num">2</span>
+    <span class="card-tag">Marketing · Guest lecture</span>
+    <span class="card-weeks">Classes 2 and 3</span>
+  </header>
+  <h3>Robert gets a revenue forecast based on what his own customers say they would buy.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>A marketing professor gives a guest lecture in Class 2. Before Class 3, students interview recent customers of the mansion.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>In the syllabus, hotel market research is due in Class 3, but no team owns the task. Most published hotel data comes from hotels with hundreds of rooms. Robert&#x27;s office would likely rent most room nights to wedding parties and event guests. Only those customers can say what they want and what they would pay.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students sort the mansion&#x27;s buyers into groups, such as couples, wedding planners and film location scouts. Each team interviews at least ten buyers. Each team then writes one value proposition per group.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to test a business idea with buyers before anyone spends money on it.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT gets a revenue forecast built from interviews with its own customers.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> A list of recent clients willing to talk with students, and an introduction email from Robert&#x27;s office.</div>
+</article>
+<article class="card lane-design reveal" id="card-stop-conditions" data-card="stop-conditions">
+  <header class="card-top">
+    <span class="card-num">3</span>
+    <span class="card-tag">Course design</span>
+    <span class="card-weeks">Class 2, tested again in Class 8</span>
+  </header>
+  <h3>The Board can trust the verdict, because Robert and the trustee set the stop conditions before any numbers came in.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>At Client Meeting #1, Robert and the trustee agree on three or four stop conditions. One example is the longest acceptable payback period. Another is the lowest acceptable room occupancy. Before Client Meeting #4, students test the forecast against each condition.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>Jai asked the team to determine financial feasibility “or not.” When students present one forecast, they tend to defend it. When the client sets the stop conditions first, students can report a “no” as a finding. The same meeting can also settle when the 36-month ROI period starts. The course description does not say.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students put each main assumption in one labeled cell of the model. They move each assumption up and down. They record which moves cross a stop condition.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to say which assumptions their conclusion depends on, and by how much.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>The Board learns which two or three assumptions matter most. The Board can then ask for more evidence on those assumptions before it commits money.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Thirty minutes of Client Meeting #1.</div>
+</article></div>
+</section>
+<section class="week has-add" id="class-3">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 3</span><span class="wk-d">Week of February 8, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span class="t" data-for="pricing-test" data-lane="mkt">Presentation of Market Research Findings to Consultant Team</span></li><li><span class="t" data-for="pricing-test" data-lane="mkt">Discussion of Program Recommendations for Hotel and Spa</span></li><li><span>Discussion of Criteria For Potential Spa Locations</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda:</div><ul><li><span>Conduct On-Site Survey of 2nd Floor Existing Conditions</span><ul><li><span>Identification 2nd floor Occupants and Program Requirements</span></li><li><span>Identify Existing Physical Conditions / Modifications from du Pont Design</span></li><li><span>Documentation Development</span></li></ul></li><li><span>Conduct On-Site Survey for Potential Spa Sites</span><div class="scoped" id="scoped-pool"><div class="scoped-label">Scoped, not scheduled · Pool restoration</div><blockquote>“Also envisioned will be the restoration of the original swimming pool on the Mansion&#x27;s grounds.”<cite>Course description</cite></blockquote><p>The spa is to be built near the pool, so the site survey in Class 3 can include the pool.</p></div></li><li><span>Assess Zoning and Building Code Implications</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 4</div><ul><li><span>Presentation of Existing Condition Drawings</span><ul><li><span>Modifications</span></li><li><span>Recommended Restoration Work</span></li></ul></li><li><span>Program Requirements and Proposed Sites for Relocated Departments</span><ul><li><span>NYIT Development Offices &amp;</span></li><li><span>de Seversky Management Offices</span></li></ul></li><li><span>Proposed Spa Locations and Code Restrictions</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">3</span></div>
+  <div class="add">
+<article class="card lane-mkt reveal" id="card-pricing-test" data-card="pricing-test">
+  <header class="card-top">
+    <span class="card-num">4</span>
+    <span class="card-tag">Marketing · Follow-up</span>
+    <span class="card-weeks">Classes 3 to 6</span>
+  </header>
+  <h3>Robert learns what couples would pay for a wedding with rooms upstairs, before NYIT commits to the restoration.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>Students run a pricing survey. Each respondent chooses among wedding packages at different prices, some with overnight rooms and some without. Marketers call the method a choice-based conjoint study.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>NYIT is unlikely to recover the restoration cost from nightly rents on six or seven rooms. NYIT recovers the cost only if couples pay more for a package that includes rooms. No team in the plan measures that extra amount.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students design the survey, send it through Robert&#x27;s office, and estimate the price premium for each package. The premium goes into the revenue assumptions in Class 7.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn the method that firms use to price new products before launch.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT gets a measured price premium for the revenue line of the P&amp;L, in place of a guess.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Robert&#x27;s office sends the survey link to past clients and recent inquiries. Students never see the contact list.</div>
+</article></div>
+</section>
+<section class="week has-add" id="class-4">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 4</span><span class="wk-d">Week of February 15, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Presentation of Existing Conditions to Consultant Team</span><ul><li><span>Suggested Scope of Restoration Work</span><ul><li><span>Identification of Alterations From duPont Design</span></li></ul></li><li><span>2nd Floor Occupants and Space Requirements</span><ul><li><span>NYIT Development Program Requirements</span><ul><li><span>Proposed Locations</span></li></ul></li><li><span>de Seversky Management Program Requirements</span></li></ul></li></ul></li><li><span>Presentation of Potential Locations for Spa to the Consultant Team</span><ul><li><span>Zoning and Building Code Analysis</span></li></ul></li><li><span>Discussion of Client Meeting #2 Presentation Materials and Needed Outcome of the Meeting</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span class="t" data-for="operations-lecture" data-lane="ops">Discussion of Development of Staffing and Operational Cost Budgets and Revenue Projections</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 5</div><ul><li><span>Presentation of Market Research for 5 Star Hotel and Health and Wellness Spa</span></li><li><span>Proposed Program Recommendations for 5 Star Hotel and Wellness Spa</span></li><li><span>Proposed Office Relocations</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">4</span></div>
+  <div class="add">
+<article class="card lane-ops reveal" id="card-operations-lecture" data-card="operations-lecture">
+  <header class="card-top">
+    <span class="card-num">5</span>
+    <span class="card-tag">Operations · Guest lecture</span>
+    <span class="card-weeks">Class 4</span>
+  </header>
+  <h3>Robert sees how many staff he would need for five-star service on a wedding night, and what they would cost.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>An operations professor gives a guest lecture in Class 4. Class 4 is the week the class first discusses staffing and operating budgets.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>Forbes Travel Guide inspectors rate five-star hotels against up to 900 standards. About three-quarters of the score is for service. Guests expect a staffed desk at all hours, room service and quiet rooms. On a wedding night, the same kitchen and staff also serve the event downstairs. The plan includes a staffing budget. No team designs the service those staff would deliver.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students map a guest&#x27;s stay from arrival to checkout, step by step. They mark each point where a hotel guest and an event guest need the same staff, kitchen, stairs or parking. They then size the staff for a quiet night and for a wedding night. They size the spa the same way, from the number of treatments the rooms and therapists can deliver each day.</dd></div>
+    <div class="f"><dt>The marketing link</dt><dd>The lecture uses the service gap model from marketing (Parasuraman, Zeithaml and Berry). In the model, the gap that matters here is the distance between the service a hotel promises and the service its staff deliver on the busiest night.</dd></div>
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to design a service and to staff it.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT gets a staffing budget that follows from a service design. Labor is usually the largest operating cost of a luxury hotel.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Current staffing levels for a typical wedding, and a 30-minute interview with the event manager.</div>
+</article></div>
+</section>
+<section class="week" id="class-5">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 5</span><span class="wk-d">Week of February 22, 2027</span><span class="wk-cm">Client Meeting #2</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting at de Seversky</div></div><div class="grp-block"><div class="gh client">Client Meeting #2</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Program Review and Selection of Program Options</div><ul><li><span>Presentation of Marketing Research and Program Recommendations</span><ul><li><span>5 Star Hotel</span><ul><li><span>Presentation of Market Research Findings</span></li><li><span>Program Recommendations</span></li><li><span>Proposed de Seversky Management Relocation</span></li><li><span>Proposed Development Office Relocation</span></li></ul></li><li><span>Health &amp; Wellness Spa</span><ul><li><span>Market Research Findings and Program Recommendations</span></li><li><span>Proposed Spa Program</span></li><li><span>Proposed Spa Location</span></li></ul></li></ul></li><li><span>Client Discussion of Recommendations and Selection of Programs and Health &amp; Wellness Spa Location</span></li><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Discussion of Next Steps</span><ul><li><span>Development of a Work Plan</span><ul><li><span>Task Assignments, Deliverables and Due Dates</span></li></ul></li></ul></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 6</div><ul><li><span>Floor Plan Review:</span><ul><li><span>Guest Room Renovations and Amenities</span></li><li><span>de Seversky Management Office Relocation</span></li><li><span>NYIT Development Office Relocation</span></li><li><span>Health &amp; Wellness Spa</span></li></ul></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">5</span></div>
+  <div class="add"></div>
+</section>
+<section class="week has-add" id="class-6">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 6</span><span class="wk-d">Week of March 1, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Floor Plan Review of the Proposed Guest Room Renovations and Amenities</span></li><li><span>Floor Plan Review of Proposed de Seversky Management Office Relocation</span></li><li><span>Floor Plan Review of Proposed NYIT Development Office Relocation</span></li><li><span>Floor plan review of the Proposed Health &amp; Wellness Spa</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div></div><div class="grp-block"><div class="gh client"><span class="t" data-for="conflict-calendar" data-lane="ops">Client Meeting #3 Discussion of Required Upgrades to Existing de Seversky Facilities to Support Growth In Services</span></div></div><div class="grp-block"><div class="gh client">NYIT Facilities Meeting # 1</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Discussion of Existing Life Safety Systems and Necessary Upgrades to Support Growth In Services</div><div class="scoped" id="scoped-ada"><div class="scoped-label">Scoped, not scheduled · ADA requirements</div><blockquote>“Assessing and determining any and all life safety and ADA requirements associated with housing overnight guests on the second floor of the Mansion.”<cite>Course description</cite></blockquote><p>Class 6 covers life safety. ADA access to second-floor rooms can join the same meeting.</p></div><ul><li><span>Systems Review and Program Development</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 7</div><ul><li><span>Presentation Materials of Findings Regarding Upgrades to Support de Seversky Growth</span><ul><li><span>Budget Impacts</span></li></ul></li><li><span>Presentation of Materials of Findings Regarding Upgrades to Life Safety Systems</span><ul><li><span>Identification of Budget and Schedule Impacts</span></li></ul></li><li><span>Presentation of Draft Total Project Budget</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">6</span></div>
+  <div class="add">
+<article class="card lane-ops reveal" id="card-conflict-calendar" data-card="conflict-calendar">
+  <header class="card-top">
+    <span class="card-num">6</span>
+    <span class="card-tag">Operations · Follow-up</span>
+    <span class="card-weeks">Classes 6 and 7</span>
+  </header>
+  <h3>Robert sees, date by date, which current bookings the hotel and spa would conflict with.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>Students build a calendar of the mansion&#x27;s bookings from the last twelve months. Beside each date, they add the hotel&#x27;s projected room nights and spa hours.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>The mansion already makes money from weddings, events and film shoots. A film crew may need the second floor. A wedding may run past midnight below guests who want to sleep. Under the project parameters, the team must keep revenue losses small. No class counts the conflicts.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students tag each past booking with the rooms and staff it used. They mark every date where a hotel guest, a spa guest and an event need the same rooms or people. They price each conflict as lost revenue or as the cost to resolve it. They present the calendar at Client Meeting #3.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to plan capacity from real booking records.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT learns what the conflicts would cost in a typical year, before it builds anything.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Twelve months of booking records, with client names removed.</div>
+</article></div>
+</section>
+<section class="week has-add" id="class-7">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 7</span><span class="wk-d">Week of March 8, 2027</span><span class="wk-cm">Client Meeting #3</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div></div><div class="grp-block"><div class="gh client">Client Meeting # 3</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Ancillary Support Impacts for Projected de Seversky Growth in Services</div><ul><li><span>Final Review and Sign-off On The Proposed Plans for Guest Rooms and Health and Wellness Spa</span></li><li><span>Discussion of Scope of Historic Restoration</span><ul><li><span>Finishings</span></li><li><span>Furnishings</span></li></ul></li><li><span>Discussion of Necessary Upgrades to Existing de Seversky Facilities</span><ul><li><span>Food Service &amp; Operations</span></li><li><span>Life Safety</span></li></ul></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Discuss Development of Construction Estimate</span></li><li><span>Discuss Development of a Construction Schedule and Project Schedule</span><div class="scoped" id="scoped-phasing"><div class="scoped-label">Scoped, not scheduled · Phasing around operations</div><blockquote>“All proposed work shall be fully coordinated with current ongoing operations of the Mansion to minimize loss of revenues.”<cite>Course description</cite></blockquote><p>The construction schedule discussed in Class 7 can include a phasing plan around booked events.</p></div></li><li><span class="t" data-for="incremental-pl" data-lane="design">Discuss Development Process for Establishing an Operating Budget, and Revenue Assumptions</span></li><li><span>Discuss Analysis and Selection of Financing Options</span><div class="scoped" id="scoped-grants"><div class="scoped-label">Scoped, not scheduled · Grant analysis</div><blockquote>“Preparing a grant analysis to determine external sources of funding and the criteria for qualification.”<cite>Course description</cite></blockquote><p>Class 7 discusses financing. Historic preservation grants can join that discussion.</p></div></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 8</div><ul><li><span>Preliminary Construction Cost and Budget Information</span></li><li><span>Draft of Proposed Operating Budget, Costs and Revenue Assumptions</span></li><li><span>Identification of Architectural and Budget Impacts For Additional Ancillary Support</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">7</span></div>
+  <div class="add">
+<article class="card lane-design reveal" id="card-incremental-pl" data-card="incremental-pl">
+  <header class="card-top">
+    <span class="card-num">7</span>
+    <span class="card-tag">Course design</span>
+    <span class="card-weeks">Classes 7 and 8</span>
+  </header>
+  <h3>NYIT counts only the money that the hotel and spa add to what the mansion earns today.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>Students build two P&amp;Ls. One shows the mansion as it runs today. The other shows the mansion with the hotel and spa. The value of the project is the difference between the two.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>In the syllabus, the P&amp;L covers the hotel and spa alone. A stand-alone P&amp;L gives the hotel credit for weddings the mansion would have hosted anyway. A stand-alone P&amp;L also does not show the events lost during construction or the cost of moving the offices off the second floor.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students start from the mansion&#x27;s current results. They add the revenue from the interviews and the pricing survey. They subtract the conflict costs from the calendar and the events lost during construction.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to value a project the standard corporate finance way, by comparing the business with the project and without it.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT sees how much more the mansion would earn than it earns today, after paying for the disruption.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Summary revenue and cost figures for the mansion for the last three years.</div>
+</article></div>
+</section>
+<section class="week has-add" id="class-8">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 8</span><span class="wk-d">Week of March 15, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Presentation of Initial Conceptual Design</span></li><li><span>Presentation of a Preliminary Construction Cost and Budget Information</span></li><li><span class="t" data-for="stop-conditions-return" data-lane="design">Review Draft of Proposed Operating Budget, Costs And Revenue Assumptions</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Discussion of Next Steps</span><ul><li><span>Development of a Work Plan</span><ul><li><span>Task Assignments, Deliverables and Due Dates</span></li></ul></li></ul></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 9</div><ul><li><span>Draft of Presentation to Client, Sr. Leadership, Board and Guests</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">8</span></div>
+  <div class="add">
+<aside class="card-return lane-design reveal" id="card-stop-conditions-return" data-card="stop-conditions-return">
+  <span class="card-num">3</span>
+  <p><strong>Back to addition 3.</strong> Students test the forecast against the stop conditions set at Client Meeting #1. <a href="#card-stop-conditions">See the card</a></p>
+</aside></div>
+</section><section class="week brk"><div class="plan"><div class="wk-head"><span class="wk-n">Spring Recess</span><span class="wk-d">Week of March 22, 2027</span></div></div><div class="spine"><span class="node node-brk"></span></div><div class="add"></div></section>
+<section class="week" id="class-9">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 9</span><span class="wk-d">Week of March 29, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting Class 9</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Review Presentation to Client</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><div class="none">None listed yet</div></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 10</div><div class="none">None listed yet</div></div>
+  </div>
+  <div class="spine"><span class="node">9</span></div>
+  <div class="add"></div>
+</section>
+<section class="week" id="class-10">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 10</span><span class="wk-d">Week of April 5, 2027</span><span class="wk-cm">Client Meeting #4</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div></div><div class="grp-block"><div class="gh client">Client Meeting #4</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Presentation of Project Materials to be Presented to Sr. Leadership</div><ul><li><span>Presentation of Proposal for the 5 Star Hotel and Health and Wellness Spa</span><ul><li><span>Floor Plans Hotel and Spa</span></li><li><span>Operating Budget Projections</span></li><li><span>Revenue Projections</span></li><li><span>Financing Recommendations</span><ul><li><span>Equity Contribution and Borrowing</span></li></ul></li><li><span>ROI Projections</span></li></ul></li><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Summary of Client Meeting # 4 and Discussion of any Requested Modifications and or Adjustments.</span><div class="scoped" id="scoped-value-engineering"><div class="scoped-label">Scoped, not scheduled · Value engineering</div><blockquote>“Development of Value engineering suggestions to respond to costs issues.”<cite>Course description</cite></blockquote><p>After Client Meeting #4, students can offer value engineering options alongside the requested changes.</p></div></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 11</div><ul><li><span>Preliminary Changes to Program Selection / Design and Finance Projections</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">10</span></div>
+  <div class="add"></div>
+</section>
+<section class="week" id="class-11">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 11</span><span class="wk-d">Week of April 12, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Presentation of Final Recommendations for the 5 Star Hotel and Health and Wellness Spa</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Discussion of Next Steps</span><ul><li><span>Development of a Work Plan</span><ul><li><span>Task Assignments, Deliverables and Due Dates</span></li></ul></li></ul></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 12</div><ul><li><span>1st Pass Architectural Plans</span></li><li><span>1st Pass Project Budget update</span></li><li><span>1st Pass Financial Update</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">11</span></div>
+  <div class="add"></div>
+</section>
+<section class="week" id="class-12">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 12</span><span class="wk-d">Week of April 19, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Review of 1st Pass Architectural Plans, Project Budget Update and Financial Update</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Work on Presentation</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 13</div><ul><li><span>Development of Final Presentation Materials</span><ul><li><span>Budget Materials</span></li><li><span>Finance Materials and Reports</span></li></ul></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">12</span></div>
+  <div class="add"></div>
+</section>
+<section class="week" id="class-13">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 13</span><span class="wk-d">Week of April 26, 2027</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="muted">Previous Meeting Minutes Review / Project Status Review</span></li><li><span>Project Budget and Schedule Information</span></li><li><span>Finance Materials and Reports</span></li><li><span>FINAL Architectural Plans</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Work on Presentation</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 14</div><ul><li><span>Update to Client</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">13</span></div>
+  <div class="add"></div>
+</section>
+<section class="week" id="class-14">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 14</span><span class="wk-d">Week of May 3, 2027</span><span class="wk-cm">Client Meeting #5</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div></div><div class="grp-block"><div class="gh client">Client Meeting # 5</div></div><div class="grp-block"><div class="gh agenda">AGENDA: Final Project Review</div><ul><li><span>Plans</span></li><li><span>Project Budget and Schedule</span></li><li><span>Financial Reports</span></li></ul></div><div class="grp-block"><div class="gh grp">Class Meeting Agenda</div><ul><li><span>Work on Presentation</span></li></ul></div><div class="grp-block"><div class="gh deliv">Deliverables for Class 15</div><ul><li><span>Presentation Materials</span><ul><li><span>Floor Plans and Renderings</span></li><li><span>Project Budget and Project Schedule</span></li><li><span>Financial Reports</span></li><li><span>Model</span><div class="scoped" id="scoped-vr-tour"><div class="scoped-label">Scoped, not scheduled · Virtual reality tour</div><blockquote>“…to the extent possible a virtual reality tour of the refurbished second floor and the Health and Wellness Center.”<cite>Course description</cite></blockquote><p>The final materials in Class 14 already include renderings and a model. A VR tour can join them where time allows.</p></div></li></ul></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">14</span></div>
+  <div class="add"></div>
+</section>
+<section class="week has-add" id="class-15">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 15</span><span class="wk-d">Week of May 10, 2027</span><span class="wk-x">Project Presentation</span></div>
+    <div class="grp-block"><div class="gh grp">Project Team Meeting</div><ul><li><span class="t" data-for="board-memo" data-lane="design">Presentation of the Consultant Team’s Recommendations</span></li><li><span>Questions and Answers</span></li><li><span>Sr. Leadership, Board of Trustees and Invited Guests Recommendation.</span></li></ul></div>
+  </div>
+  <div class="spine"><span class="node">15</span></div>
+  <div class="add">
+<article class="card lane-design reveal" id="card-board-memo" data-card="board-memo">
+  <header class="card-top">
+    <span class="card-num">8</span>
+    <span class="card-tag">Course design</span>
+    <span class="card-weeks">Class 15</span>
+  </header>
+  <h3>Peter and the Board receive a two-page decision they can act on at their next meeting.</h3>
+  <dl>
+    <div class="f"><dt>What it is</dt><dd>Students hand in a two-page memo with the final presentation. Page one contains the recommendation and its conditions. Page two contains the main assumptions and the evidence for each.</dd></div>
+    <div class="f"><dt>Why add it</dt><dd>Trustees often decide weeks after a presentation, at a board meeting, from papers in the board book. The students will not be there to explain their slides.</dd></div>
+    <div class="f"><dt>What students do</dt><dd>Students draft the memo in Classes 13 and 14. They revise it after Client Meeting #5.</dd></div>
+    
+  </dl>
+  <div class="gains">
+    <div class="gain"><div class="gl">Students gain</div><p>Students learn to write for a reader who will decide without them in the room.</p></div>
+    <div class="gain"><div class="gl">NYIT gains</div><p>NYIT gets a document it can file with the Board&#x27;s papers and reread when the Board takes up funding.</p></div>
+  </div>
+  <div class="asks"><span class="al">Asks of Robert's office</span> Nothing.</div>
+</article></div>
+</section><section class="week brk"><div class="plan"><div class="wk-head"><span class="wk-n">Exams</span><span class="wk-d">Week of May 17, 2027</span></div></div><div class="spine"><span class="node node-brk"></span></div><div class="add"></div></section>
+<section class="week" id="class-16">
+  <div class="plan">
+    <div class="wk-head"><span class="wk-n">Class 16</span><span class="wk-d">Week of May 24, 2027</span></div>
+    
+  </div>
+  <div class="spine"><span class="node">16</span></div>
+  <div class="add"></div>
+</section>
+</main>
+
+<section class="closing">
+  <h2>What the Board can decide</h2>
+  <div class="ba">
+    <div class="before">
+      <div class="lbl">With the plan as written</div>
+      <p>Can NYIT restore six or seven second-floor suites and build a spa, and what would the work cost?</p>
+    </div>
+    <div class="after">
+      <div class="lbl">With the additions</div>
+      <p>Should NYIT build the hotel and spa?</p>
+      <p>What would customers pay, and how much would the project add to the mansion's current earnings?</p>
+      <p>Which results would stop the project?</p>
+    </div>
+  </div>
+
+  <details class="how">
+    <summary>How we chose these</summary>
+    <p>We used seven rules to decide what to add and how to show it.</p>
+    <ol>
+      <li>The course produces two results: a decision for NYIT and a graduate who can make such decisions. Each addition improves at least one.</li>
+      <li>The hotel and spa count only for what they add to the mansion's current earnings, after the cost of disruption.</li>
+      <li>Every number in the final P&amp;L needs a team that produces it from evidence.</li>
+      <li>Each input arrives before the decision that uses it.</li>
+      <li>The answer can be &ldquo;no.&rdquo; The client sets the stop conditions before the numbers come in.</li>
+      <li>The additions fit the existing weeks and client meetings. Nothing in the plan as written is moved or removed.</li>
+      <li>A reader can grasp the whole page in seconds and find any detail with one click.</li>
+    </ol>
+  </details>
+</section>
+
+<footer>Draft for discussion · NYIT School of Management · October 2026</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var buttons = document.querySelectorAll('.seg button');
+  function setView(v) {
+    body.setAttribute('data-view', v);
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
+
+  var reveals = document.querySelectorAll('.reveal');
+  var cards = document.querySelectorAll('[data-card]');
+  function light(id, on) {
+    document.querySelectorAll('[data-for~="' + id + '"]').forEach(function (el) { el.classList.toggle('lit', on); });
+  }
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+  reveals.forEach(function (el) { revealObs.observe(el); });
+
+  var litObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { light(en.target.dataset.card, en.isIntersecting); });
+  }, { rootMargin: '-30% 0px -30% 0px', threshold: 0 });
+  cards.forEach(function (c) {
+    litObs.observe(c);
+    c.addEventListener('mouseenter', function () { light(c.dataset.card, true); });
+  });
+
+  window.addEventListener('beforeprint', function () { reveals.forEach(function (el) { el.classList.add('in'); }); });
+})();
+</script>
+</body>
+</html>
