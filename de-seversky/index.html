@@ -176,6 +176,48 @@ body[data-view="plan"] .has-add .node { background: var(--paper); border-color: 
 body[data-view="plan"] .t.lit { background: none; box-shadow: none; color: inherit; }
 body[data-view="plan"] .cols-head .ch-add { visibility: hidden; }
 
+
+/* ---------- stage view ---------- */
+.stages { display: none; max-width: 1240px; margin: 0 auto; padding: 36px 16px 40px; }
+body[data-view="stage"] .stages { display: block; }
+body[data-view="stage"] .weeks, body[data-view="stage"] .cols-head { display: none; }
+.st-intro h2 { font-size: 30px; margin: 0 0 8px; }
+.st-intro p { max-width: 820px; color: var(--ink-2); margin: 0 0 22px; }
+.stage { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; margin-bottom: 18px; overflow: hidden; }
+.st-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 16px 22px 12px; border-bottom: 1px solid #EEE7D7; }
+.st-n { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9A6B0C; }
+.st-head h3 { margin: 0; font-size: 22px; }
+.st-team { font-size: 13px; color: var(--ink-2); }
+.st-join { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); background: #F1E3BF; padding: 2px 8px; border-radius: 999px; }
+.st-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; }
+.st-col { padding: 14px 22px 18px; }
+.st-col + .st-col { border-left: 1px solid #EEE7D7; }
+.st-lbl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.st-items { margin: 0; padding-left: 16px; font-size: 13.5px; color: var(--ink-2); }
+.st-items li { margin: 0 0 6px; }
+.st-items li::marker { color: #C6BBA3; }
+.st-items .mk { display: inline-block; vertical-align: middle; margin-left: 6px; text-decoration: none; }
+.st-items .mk .dot { width: 20px; height: 20px; font-size: 10.5px; }
+.st-items .mk .scoped-dot { width: 13px; height: 13px; }
+.st-src { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+.chips { display: flex; flex-direction: column; gap: 8px; }
+.chip { display: flex; align-items: center; gap: 10px; text-decoration: none; background: #fff; border: 1.5px solid var(--lane); border-radius: 10px; padding: 8px 10px; font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.3; transition: background-color .15s; }
+.chip:hover { background: var(--lane-t); }
+.chip .dot { flex: none; }
+.chip-scoped { border: 1.5px dashed #A9AFBC; font-weight: 500; color: var(--ink-2); }
+.chip-scoped:hover { background: #F3F1EC; }
+.chip-scoped em { display: block; font-style: normal; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.st-out { background: var(--navy); color: var(--paper); }
+.st-out .st-lbl { color: var(--gold); }
+.st-out p { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 18.5px; line-height: 1.4; }
+.st-across { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 14px 22px; }
+.st-across .st-lbl { margin: 0; }
+@media (max-width: 880px) {
+  .st-grid { grid-template-columns: 1fr; }
+  .st-col + .st-col { border-left: 0; border-top: 1px solid #EEE7D7; }
+  .st-head, .st-col, .st-across { padding-left: 16px; padding-right: 16px; }
+}
+
 /* ---------- closing ---------- */
 .closing { max-width: 1240px; margin: 0 auto; padding: 20px 16px 72px; }
 .closing h2 { font-size: 32px; margin: 0 0 18px; }
@@ -215,7 +257,8 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
 }
 @media (max-width: 420px) {
   .ov-d { display: none; }
-  .seg button { padding: 7px 10px; }
+  .seg button { padding: 7px 11px; }
+  .btn-print { display: none; }
 }
 
 /* ---------- print ---------- */
@@ -227,6 +270,10 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
   .reveal { opacity: 1 !important; transform: none !important; }
   .card, .card-return, .scoped, .ba > div { break-inside: avoid; }
   .card-top, .gain, .dot, .node, .ba .after, .t.lit { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .stages { display: block !important; break-before: page; }
+  .weeks { display: block !important; }
+  .week { display: grid !important; }
+  .add > *, .scoped { display: revert !important; }
   details.how { display: block; }
   details.how > *:not(summary) { display: block; }
   .card { box-shadow: none; border: 1px solid #ddd; }
@@ -240,7 +287,7 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
     <div class="kicker">Spring 2027 · Interdisciplinary course</div>
     <h1>de Seversky Studio</h1>
     <p class="sub">The course plan as written, with eight proposed additions.</p>
-    <p class="lead">The plan runs week by week. Each addition appears beside the week it belongs to. Each card shows who benefits and what the addition asks of the mansion's staff. As a card scrolls into view, the lines of the plan it builds on light up in the card's color.</p>
+    <p class="lead">The page has three views, switched in the bar below. <b>As written</b> shows the syllabus alone. <b>By week</b> places each addition beside the week it belongs to; as a card scrolls into view, the lines of the plan it builds on light up in the card's color. <b>By stage</b> sorts the additions by the four services in the course description. Each card shows who benefits and what the addition asks of the mansion's staff.</p>
     <div class="legend">
       <span><i class="sw mkt"></i>Marketing</span>
       <span><i class="sw ops"></i>Operations</span>
@@ -260,8 +307,9 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
     <div class="bar-title">de Seversky Studio</div>
     <div class="bar-tools">
       <div class="seg" role="group" aria-label="View">
-        <button type="button" data-view="plan" aria-pressed="false">Plan as written</button>
-        <button type="button" data-view="add" aria-pressed="true">With additions</button>
+        <button type="button" data-view="plan" aria-pressed="false">As written</button>
+        <button type="button" data-view="add" aria-pressed="true">By week</button>
+        <button type="button" data-view="stage" aria-pressed="false">By stage</button>
       </div>
       <button type="button" class="btn-print" onclick="window.print()">Print</button>
     </div>
@@ -562,6 +610,46 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
 </section>
 </main>
 
+<section class="stages" id="stages" aria-label="Additions by stage">
+  <div class="st-intro">
+    <h2>The additions by stage</h2>
+    <p>The course description lists four services. In the syllabus, one team delivers both design and construction management, so the course runs in three or four stages. As written, the School of Management works in stage 4 only. With the additions, School of Management faculty also contribute in stages 1 and 2.</p>
+  </div>
+  
+<section class="stage">
+  <header class="st-head"><span class="st-n">Stage 1</span><h3>Programming Services</h3><span class="st-team">Health &amp; Wellness team</span><span class="st-join">Joined by School of Management marketing faculty</span></header>
+  <div class="st-grid">
+    <div class="st-col"><div class="st-lbl">Outcomes as written</div><ul class="st-items"><li><span>Assessing the market for a Health and Wellness Center for internal and external patrons to determine market demand and recommended services to be provided.</span></li><li><span>Developing a space program for the Hotel operations.</span><a class="mk" href="#card-marketing-lecture" title="2. Marketing lecture and customer interviews"><span class="dot lane-mkt">2</span></a><a class="mk" href="#card-pricing-test" title="4. Pricing test of the wedding-and-room package"><span class="dot lane-mkt">4</span></a></li><li><span>Developing a space program for the Health and Wellness Center to meet market demand.</span></li></ul><div class="st-src">Course description, Project Requirements</div></div>
+    <div class="st-col"><div class="st-lbl">What we add</div><div class="chips"><a class="chip lane-mkt" href="#card-marketing-lecture"><span class="dot lane-mkt">2</span><span>Marketing lecture and customer interviews</span></a><a class="chip lane-mkt" href="#card-pricing-test"><span class="dot lane-mkt">4</span><span>Pricing test of the wedding-and-room package</span></a></div></div>
+    <div class="st-col st-out"><div class="st-lbl">Outcome with the additions</div><p>Robert gets a hotel and spa program sized to measured demand and a tested price.</p></div>
+  </div>
+</section>
+<section class="stage">
+  <header class="st-head"><span class="st-n">Stage 2</span><h3>Architecture and Design Services</h3><span class="st-team">Architectural/CM team</span><span class="st-join">Joined by School of Management operations faculty</span></header>
+  <div class="st-grid">
+    <div class="st-col"><div class="st-lbl">Outcomes as written</div><ul class="st-items"><li><span>Assessing and quantifying the scope of renovations and restoration work required to restore the second floor primary bedroom suites per the original design of Carrere &amp; Hastings, Architects. This assessment will include determining finishes and materials of the period, furnishings and furniture.</span></li><li><span>Assessing and determining any and all life safety and ADA requirements associated with housing overnight guests on the second floor of the Mansion.</span><a class="mk" href="#scoped-ada" title="Scoped, not scheduled: ADA requirements"><span class="dot scoped-dot"></span></a></li><li><span>Designing the Health and Wellness Center, to be located in proximity of the Mansion and the refurbished pool.</span><a class="mk" href="#scoped-pool" title="Scoped, not scheduled: Pool restoration"><span class="dot scoped-dot"></span></a></li><li><span>Identification of any equipment, furnishings and furniture needed to support the Health and Wellness Center.</span></li><li><span>Assessment of the existing catering operations infrastructure to determine any necessary upgrades to support the Hotel and Health and Wellness Center operations.</span><a class="mk" href="#card-conflict-calendar" title="6. Conflict calendar"><span class="dot lane-ops">6</span></a></li><li><span>Zoning and building code analysis.</span></li><li><span>Preparation of site plans, floor plans, elevations, renderings and to the extent possible a virtual reality tour of the refurbished second floor and the Health and Wellness Center.</span><a class="mk" href="#scoped-vr-tour" title="Scoped, not scheduled: Virtual reality tour"><span class="dot scoped-dot"></span></a></li><li><span>Development of a full project budget including hard and soft cost expenditures, and financing costs.</span></li><li><span>Development of a total project schedule from project authorization to day one operations.</span></li></ul><div class="st-src">Course description, Project Requirements</div></div>
+    <div class="st-col"><div class="st-lbl">What we add</div><div class="chips"><a class="chip lane-ops" href="#card-conflict-calendar"><span class="dot lane-ops">6</span><span>Conflict calendar</span></a><a class="chip chip-scoped" href="#scoped-ada"><span class="dot scoped-dot"></span><span>ADA requirements <em>scoped, not scheduled</em></span></a><a class="chip chip-scoped" href="#scoped-pool"><span class="dot scoped-dot"></span><span>Pool restoration <em>scoped, not scheduled</em></span></a><a class="chip chip-scoped" href="#scoped-vr-tour"><span class="dot scoped-dot"></span><span>Virtual reality tour <em>scoped, not scheduled</em></span></a></div></div>
+    <div class="st-col st-out"><div class="st-lbl">Outcome with the additions</div><p>Robert sees each design tested against a year of the mansion&#x27;s real bookings, with ADA access and the pool in scope.</p></div>
+  </div>
+</section>
+<section class="stage">
+  <header class="st-head"><span class="st-n">Stage 3</span><h3>Construction Management Services</h3><span class="st-team">Architectural/CM team</span></header>
+  <div class="st-grid">
+    <div class="st-col"><div class="st-lbl">Outcomes as written</div><ul class="st-items"><li><span>Construction costs estimates</span></li><li><span>Development of an estimated construction schedule</span><a class="mk" href="#scoped-phasing" title="Scoped, not scheduled: Phasing around operations"><span class="dot scoped-dot"></span></a></li><li><span>Development of Value engineering suggestions to respond to costs issues.</span><a class="mk" href="#scoped-value-engineering" title="Scoped, not scheduled: Value engineering"><span class="dot scoped-dot"></span></a></li></ul><div class="st-src">Course description, Project Requirements</div></div>
+    <div class="st-col"><div class="st-lbl">What we add</div><div class="chips"><a class="chip chip-scoped" href="#scoped-phasing"><span class="dot scoped-dot"></span><span>Phasing around operations <em>scoped, not scheduled</em></span></a><a class="chip chip-scoped" href="#scoped-value-engineering"><span class="dot scoped-dot"></span><span>Value engineering <em>scoped, not scheduled</em></span></a></div></div>
+    <div class="st-col st-out"><div class="st-lbl">Outcome with the additions</div><p>Robert gets a construction schedule built around booked events, and cost options ready if the estimates come in high.</p></div>
+  </div>
+</section>
+<section class="stage">
+  <header class="st-head"><span class="st-n">Stage 4</span><h3>Financial Services</h3><span class="st-team">Management team</span><span class="st-join">Joined by operations faculty</span></header>
+  <div class="st-grid">
+    <div class="st-col"><div class="st-lbl">Outcomes as written</div><ul class="st-items"><li><span>Development of a staffing model and staffing costs.</span><a class="mk" href="#card-operations-lecture" title="5. Operations lecture and service design"><span class="dot lane-ops">5</span></a></li><li><span>Preparing an operating budget identifying all cost centers, estimated costs and projected revenue income.</span></li><li><span>Preparing a P&amp;L statement.</span><a class="mk" href="#card-incremental-pl" title="7. P&amp;L measured against today&#x27;s mansion"><span class="dot lane-design">7</span></a><a class="mk" href="#card-stop-conditions" title="3. Stop conditions agreed in advance"><span class="dot lane-design">3</span></a></li><li><span>Preparing a grant analysis to determine external sources of funding and the criteria for qualification.</span><a class="mk" href="#scoped-grants" title="Scoped, not scheduled: Grant analysis"><span class="dot scoped-dot"></span></a></li><li><span>Identifying sources of borrowing and or external funding</span></li></ul><div class="st-src">Course description, Project Requirements</div></div>
+    <div class="st-col"><div class="st-lbl">What we add</div><div class="chips"><a class="chip lane-ops" href="#card-operations-lecture"><span class="dot lane-ops">5</span><span>Operations lecture and service design</span></a><a class="chip lane-design" href="#card-incremental-pl"><span class="dot lane-design">7</span><span>P&amp;L measured against today&#x27;s mansion</span></a><a class="chip lane-design" href="#card-stop-conditions"><span class="dot lane-design">3</span><span>Stop conditions agreed in advance</span></a><a class="chip lane-design" href="#card-board-memo"><span class="dot lane-design">8</span><span>Two-page Board memo</span></a><a class="chip chip-scoped" href="#scoped-grants"><span class="dot scoped-dot"></span><span>Grant analysis <em>scoped, not scheduled</em></span></a></div></div>
+    <div class="st-col st-out"><div class="st-lbl">Outcome with the additions</div><p>The Board gets a yes or a no, with conditions, measured against what the mansion earns today.</p></div>
+  </div>
+</section><div class="st-across"><span class="st-lbl">Across all four stages</span><div class="chips"><a class="chip lane-design" href="#card-objectives"><span class="dot lane-design">1</span><span>Learning objectives and weekly integration session</span></a></div></div>
+</section>
+
 <section class="closing">
   <h2>What the Board can decide</h2>
   <div class="ba">
@@ -602,7 +690,20 @@ footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 12.5
     body.setAttribute('data-view', v);
     buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
   }
-  buttons.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
+  var bar = document.querySelector('.bar');
+  function toContentTop() {
+    var top = bar.offsetTop;
+    if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'instant' });
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); toContentTop(); }); });
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest('a[href^="#card-"], a[href^="#scoped-"], a[href^="#class-"]');
+    if (!a || body.getAttribute('data-view') === 'add') return;
+    ev.preventDefault();
+    setView('add');
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (el) requestAnimationFrame(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  });
 
   var reveals = document.querySelectorAll('.reveal');
   var cards = document.querySelectorAll('[data-card]');
